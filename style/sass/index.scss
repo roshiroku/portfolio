@@ -1,0 +1,117 @@
+@import "./partial/setup";
+@import "./partial/content";
+@import "./partial/layout";
+@import "./partial/sections";
+
+// Homepage specific styles
+
+// About section styles
+#about {
+  text-align: center;
+
+  >img {
+    display: block;
+    height: 132px;
+    margin: 0 auto 32px;
+  }
+
+  >a {
+    margin-top: 32px;
+  }
+}
+
+// Projects gallery section styles
+#projects {
+  text-align: center;
+
+  >ul {
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 24px;
+    width: $section-title-width;
+    margin: 32px auto 0;
+
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include small-mobile {
+      gap: $container-px;
+    }
+
+    >li .card {
+      height: 100%;
+    }
+  }
+}
+
+// Contact section styles
+#contact {
+  .panel {
+    width: $section-title-width;
+    text-align: center;
+
+    .fa-envelope {
+      display: block;
+      font-size: 3.75rem;
+    }
+
+    h6 {
+      width: 70%;
+      margin: 24px auto 0;
+      color: $color-primary;
+
+      @include small-tablet {
+        width: 100%;
+      }
+    }
+
+    h4 {
+      width: 80%;
+      margin: 16px auto 0;
+
+      @include small-tablet {
+        width: 100%;
+      }
+    }
+
+    // Contact form styles
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 80%;
+      margin: 36px auto 0;
+      text-align: left;
+
+      .form-col {
+        width: 232px;
+        flex-grow: 1;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      .form-row {
+        width: 100%;
+      }
+
+      .button {
+        display: block;
+        margin-top: 16px;
+
+        @include small-mobile {
+          width: 100%;
+        }
+      }
+
+      @include small-tablet {
+        width: 100%;
+      }
+    }
+  }
+}

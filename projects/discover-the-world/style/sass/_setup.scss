@@ -1,0 +1,31 @@
+$font-body: Assistant, sans-serif;
+$font-label: Heebo, sans-serif;
+$color-body: #fff;
+$color-body-bg: #E5EEFF;
+$color-primary: #0EE1DA;
+$color-secondary: #020253;
+$color-tertiary: #8E097C;
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,126 @@
+// Mixins for device breakpoint media queries (desktop-first approach)
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// Declare Sass variables using corresponding CSS variables.
+// This allows using the shorter Sass variables in the file while enabling responsive changes by modifying CSS variables.
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+$color-text: var(--color-text);
+$color-link: var(--color-link);
+$color-primary: var(--color-primary);
+$color-primary-alt: var(--color-primary-alt);
+$color-secondary: var(--color-secondary);
+$color-secondary-alt: var(--color-secondary-alt);
+$color-logo: var(--color-logo);
+$color-logo-alt: var(--color-logo-alt);
+$color-bg: var(--color-bg);
+$color-bg-alt: var(--color-bg-alt);
+$color-bg-hover: var(--color-bg-hover);
+$color-bg-input: var(--color-bg-input);
+$color-divider: var(--color-divider);
+$linear-gradient-primary: linear-gradient(to right, $color-primary, $color-secondary);
+$linear-gradient-primary-alt: linear-gradient(to bottom right, $color-secondary-alt, $color-primary-alt);
+
+// Responsive Sass variables
+$header-py: var(--header-py);
+$header-height: var(--header-height);
+$section-title-width: var(--section-title-width);
+$section-content-width: var(--section-content-width);
+$container-px: var(--container-px);
+
+:root {
+  --color-text: #fff;
+  --color-link: #d8d3ff;
+  --color-primary: #7286ff;
+  --color-primary-alt: #7f40dd;
+  --color-secondary: #fe7587;
+  --color-secondary-alt: #db6977;
+  --color-logo: #da42fb;
+  --color-logo-alt: #8556e5;
+  --color-bg: #141219;
+  --color-bg-alt: #1b1724;
+  --color-bg-hover: #2d1d34;
+  --color-bg-input: rgba(39, 32, 89, .1);
+  --color-divider: rgba(245, 245, 245, .1);
+  --font-primary: Raleway, sans-serif;
+  --font-secondary: "Noto Sans", sans-serif;
+
+  // Responsive CSS variable declarations
+  --header-py: 24px;
+  --header-height: 96px;
+  --section-title-width: 80%;
+  --section-content-width: 70%;
+  --container-px: 64px;
+}
+
+// Responsive CSS variable updates
+@include tablet {
+  :root {
+    --container-px: 32px;
+  }
+}
+
+@include small-tablet {
+  :root {
+    --header-py: 16px;
+    --header-height: 80px;
+  }
+}
+
+@include mobile {
+  :root {
+    --section-title-width: 100%;
+    --section-content-width: 100%;
+    --container-px: 24px;
+  }
+}
+
+@include small-mobile {
+  :root {
+    --container-px: 20px;
+  }
+}
+
+// Reset styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+dl {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: unset;
+  border: 0;
+}

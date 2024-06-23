@@ -1,0 +1,24 @@
+$font-body: "Heebo", sans-serif;
+$color-body: #000;
+$color-label: #2C2C2C;
+$color-primary: #FDBD03;
+$color-secondary: #020253;
+$color-input-bg: #E5EEFF;
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

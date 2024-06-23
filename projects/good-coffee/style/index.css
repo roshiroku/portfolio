@@ -1,0 +1,31 @@
+:root {
+  --bs-font-sans-serif: Heebo, sans-serif;
+  --bs-body-color: #020253;
+  --bs-border-color: #020253;
+  --bs-dark-rgb: 44, 44, 44;
+  --bs-primary-rgb: 2, 2, 83;
+  --bs-secondary-rgb: 229, 238, 255;
+}
+
+.form-container {
+  max-width: 420px;
+  box-sizing: content-box;
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    height: 100%;
+  }
+
+  .form-col {
+    overflow: auto;
+  }
+
+  .form-container {
+    margin-top: 15vh;
+  }
+
+  .form-container input[type="submit"] {
+    width: auto !important;
+  }
+}

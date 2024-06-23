@@ -1,0 +1,269 @@
+// Typographic styles
+.type-headline {
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 1.15;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include small-tablet {
+    font-size: 2.25rem;
+    line-height: 1.333;
+  }
+
+  @include small-mobile {
+    font-size: 2rem;
+  }
+}
+
+.type-desc-lg {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
+
+  @include small-mobile {
+    font-size: 1.05rem;
+  }
+}
+
+.type-title {
+  font-weight: bold;
+  font-size: 2.25rem;
+  line-height: 1.333;
+
+  @include small-mobile {
+    font-size: 2rem;
+  }
+}
+
+.type-desc {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.777;
+
+  @include small-mobile {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+}
+
+.type-title-sm {
+  font-size: 1.5rem;
+  line-height: 1.333;
+  font-weight: 400;
+
+  @include small-tablet {
+    font-size: 1.25rem;
+  }
+  
+  @include small-mobile {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+}
+
+.type-overview {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.333;
+}
+
+// Button styles
+.button {
+  display: inline-block;
+  border-radius: 160px;
+  padding: 2px;
+  background-image: $linear-gradient-primary;
+  border: none;
+  cursor: pointer;
+  max-width: 100%;
+
+  &-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+    background-color: #141219;
+    text-align: center;
+    border-radius: 160px;
+    padding: 12px 44px;
+    transition: background-color .2s;
+    border: none;
+    font-weight: 600;
+    font-family: $font-primary;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  &-extended {
+    .button-text {
+      padding: 12px 64px;
+    }
+  }
+
+  &:hover &-text {
+    background-color: $color-bg-hover;
+  }
+}
+
+.button-bar {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+// Form and input styles
+.form {
+  label {
+    font-weight: 400;
+    line-height: 2;
+
+    .fa-asterisk {
+      font-size: .5rem;
+      vertical-align: super;
+      color: $color-secondary;
+    }
+  }
+
+  &-input {
+    display: block;
+    border: 1px solid $color-divider;
+    background-color: $color-bg-input;
+    color: $color-text;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    line-height: 1.333;
+    width: 100%;
+    font-family: $font-secondary;
+
+    &:focus {
+      border-color: $color-primary;
+      outline: 0;
+    }
+  }
+}
+
+input.form-input {
+  height: 52px;
+}
+
+textarea.form-input {
+  height: 78px;
+  resize: none;
+}
+
+// Gradient styles
+.gradient-text,
+.gradient-icon {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradient-text {
+  background-image: $linear-gradient-primary;
+}
+
+.gradient-icon {
+  background-image: $linear-gradient-primary-alt;
+}
+
+// Card styles
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-divider;
+  border-radius: 12px;
+
+  &-clickable {
+    transition: background-color .2s;
+
+    .card-img {
+      transform-origin: bottom;
+      transition: transform .2s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $color-bg-hover;
+
+      .card-img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &-top {
+    background-image: $linear-gradient-primary;
+    border-radius: 12px 12px 0 0;
+    padding: 24px 24px 0;
+    overflow: hidden;
+
+    .card-img {
+      border-radius: 4px 4px 0 0;
+      aspect-ratio: 2;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px 24px;
+  }
+
+  &-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  &-desc {
+    margin-top: 16px;
+    font-size: .875rem;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  &-footer {
+    margin-top: 24px;
+    display: flex;
+    font-size: 1.25rem;
+    gap: 20px;
+  }
+}
+
+// Panel styles
+.panel {
+  margin: 0 auto;
+  border-radius: 4px 4px 12px 12px;
+  border: 1px solid $color-divider;
+  background-color: $color-bg-alt;
+  overflow: hidden;
+
+  &-highlight {
+    display: block;
+    height: 4px;
+    background-image: $linear-gradient-primary;
+  }
+
+  &-body {
+    padding: 56px 36px;
+
+    @include small-mobile {
+      padding: 32px 24px;
+    }
+  }
+}

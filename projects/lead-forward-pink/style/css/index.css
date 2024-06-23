@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Heebo, sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.container {
+  padding: 36px;
+}
+
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 590px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 576px) {
+  .cover-image {
+    aspect-ratio: 1.737;
+    min-height: 210px;
+    height: auto;
+  }
+}
+
+.contact-section {
+  position: relative;
+  margin-left: 252px;
+  margin-top: 108px;
+  padding: 72px 72px 144px;
+  max-width: 568px;
+  background-color: rgba(26, 26, 26, 0.831);
+}
+.contact-section h1 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+@media (max-width: 576px) {
+  .contact-section h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+}
+.contact-section p {
+  font-size: 1.25rem;
+  margin-bottom: 36px;
+}
+@media (max-width: 576px) {
+  .contact-section p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+}
+.contact-section label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.contact-section input {
+  display: block;
+  border: 0;
+  min-height: 50px;
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 1rem;
+  font-family: Heebo, sans-serif;
+}
+.contact-section input[type=submit] {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #D31C75;
+  padding: 9px 48px;
+  letter-spacing: 0.333px;
+  width: auto;
+  margin-top: 36px;
+}
+@media (max-width: 576px) {
+  .contact-section input[type=submit] {
+    font-size: 1rem;
+    margin-top: 22px;
+    padding: 6px 18px;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section input {
+    min-height: 30px;
+    padding: 6px;
+  }
+}
+.contact-section .form-group + .form-group {
+  margin-top: 18px;
+}
+@media (max-width: 1280px) {
+  .contact-section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 576px) {
+  .contact-section {
+    margin-top: 54px;
+    padding: 42px 36px;
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap"
+    rel="stylesheet">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+  <!-- Homepage style -->
+  <link rel="stylesheet" href="./style/css/index.css">
+</head>
+
+<body>
+
+  <!-- Site header -->
+  <header id="site-header">
+    <div class="content-wrapper">
+      <!-- Logo and homepage link -->
+      <a href="./index.html" class="logo">
+        <img src="./images/logo.svg" alt="logo">
+        <span>Portfolio</span>
+      </a>
+      <!-- Navigation toggle for mobile view -->
+      <input type="checkbox" id="nav-toggle" aria-hidden="true">
+      <label class="nav-button" for="nav-toggle" role="button">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-times"></i>
+      </label>
+      <!-- Site navigation menu -->
+      <nav aria-label="site menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="site-content">
+    <div class="content-wrapper">
+
+      <!-- Hero section -->
+      <section id="hero" class="section">
+        <!-- Background blur effect -->
+        <div class="blur-effect" aria-hidden="true"></div>
+        <h1 class="type-headline">
+          Crafting Digital Experiences with <span class="gradient-text">Precision and Creativity</span>
+        </h1>
+        <p class="type-desc-lg">
+          Delivering tailored web solutions that blend innovative design with robust functionality, ensuring a seamless
+          and engaging user experience.
+        </p>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Technologies section -->
+      <section id="tech" class="section">
+        <ul>
+          <li><i class="fa-brands fa-sass" title="Sass"></i></li>
+          <li><i class="fa-brands fa-css3-alt" title="CSS3"></i></li>
+          <li><i class="fa-brands fa-html5" title="HTML5"></i></li>
+          <li><i class="fa-brands fa-js" title="JS"></i></li>
+          <li><i class="fa-brands fa-bootstrap" title="Bootstrap"></i></li>
+        </ul>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- About section -->
+      <section id="about" class="section">
+        <img src="./images/logo.svg" alt="about logo">
+        <h4 class="type-title section-title">Behind the Code</h4>
+        <p class="type-desc section-desc">
+          Hello! I'm Shir Raanan, an aspiring full stack developer with a passion for creating seamless digital
+          experiences. Currently, I'm honing my skills at HackerU Academy, where I'm dedicated to becoming a
+          professional
+          full stack web developer.
+        </p>
+        <p class="type-desc section-desc">
+          Motivation, consistency, creativity, and professionalism drive my work. I strive to ensure each project is
+          functional, aesthetically pleasing, and user-centric. I'm excited to bring innovative solutions to the digital
+          world and collaborate on future projects.
+        </p>
+        <a href="#" class="button">
+          <div class="button-text">Download CV</div>
+        </a>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Projects section -->
+      <section id="projects" class="section">
+        <h4 class="type-title section-title">Web Development Highlights</h4>
+        <p class="type-desc section-desc">
+          Explore my diverse web development projects, showcasing innovative designs, robust functionality, and creative
+          solutions using modern technologies.
+        </p>
+        <ul>
+          <li>
+            <!-- Discover the World -->
+            <a href="./projects/discover-the-world/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/discover-the-world-thumb.PNG" alt="Discover the World">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Discover the World</h4>
+                <p class="card-desc">
+                  A stunning CSS Grid landing page with tiled images and a lead-generating contact form.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Free Consulting -->
+            <a href="./projects/free-consulting/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/free-consulting-thumb.PNG" alt="Free Consulting">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Free Consulting</h4>
+                <p class="card-desc">
+                  A modern landing page for free consulting with engaging graphics and a lead-generating call to action.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Good Coffee -->
+            <a href="./projects/good-coffee/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/good-coffee-thumb.PNG" alt="Good Coffee">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Good Coffee</h4>
+                <p class="card-desc">
+                  A sleek landing page offering free coffee coupons with an engaging cover image and subscription form.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-bootstrap"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Here & Now -->
+            <a href="./projects/here-now/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/here-now-thumb.PNG" alt="Here & Now">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Here & Now</h4>
+                <p class="card-desc">
+                  A modern, colorful landing page with a lead-generating form.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Lead Forward (Blue) -->
+            <a href="./projects/lead-forward-blue/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/lead-forward-blue-thumb.PNG" alt="Lead Forward (Blue)">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Lead Forward (Blue)</h4>
+                <p class="card-desc">
+                  A sleek landing page with engaging cover graphics and a lead-generating form.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Lead Forward (Pink) -->
+            <a href="./projects/lead-forward-pink/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/lead-forward-pink-thumb.PNG" alt="Lead Forward (Pink)">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Lead Forward (Pink)</h4>
+                <p class="card-desc">
+                  A sleek landing page with engaging cover graphics and a floating lead-generating form.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li>
+            <!-- Outside the Box -->
+            <a href="./projects/outside-the-box/project.html" class="card card-clickable">
+              <div class="card-top">
+                <div class="card-img">
+                  <img src="./images/projects/outside-the-box-thumb.PNG" alt="Outside the Box">
+                </div>
+              </div>
+              <div class="card-bottom">
+                <h4 class="card-title">Outside the Box</h4>
+                <p class="card-desc">
+                  A modern landing page with multiple sections, including a lead form and business location map.
+                </p>
+                <ul class="card-footer">
+                  <li><i class="fa-brands fa-bootstrap"></i></li>
+                  <li><i class="fa-brands fa-css3-alt"></i></li>
+                  <li><i class="fa-brands fa-html5"></i></li>
+                </ul>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Contact section -->
+      <section id="contact" class="section">
+        <div class="panel">
+          <div class="panel-highlight"></div>
+          <div class="panel-body">
+            <i class="fa-solid fa-envelope gradient-icon"></i>
+            <h6 class="type-overview">Get In Touch</h6>
+            <h4 class="type-title-sm">
+              Connect with me for collaborations, questions, or inquiries.
+            </h4>
+            <!-- Contact form -->
+            <form class="form">
+              <div class="form-col">
+                <!-- Name input -->
+                <label for="contact-name">
+                  Name <i class="fa-solid fa-asterisk"></i>
+                </label>
+                <input type="text" id="contact-name" class="form-input" required>
+              </div>
+              <div class="form-col">
+                <!-- Phone input -->
+                <label for="contact-phone">Phone</label>
+                <input type="tel" id="contact-phone" class="form-input" pattern="(\+\d{9,12})|(\d{9,10})">
+              </div>
+              <div class="form-row">
+                <!-- Email input -->
+                <label for="contact-email">
+                  Email <i class="fa-solid fa-asterisk"></i>
+                </label>
+                <input type="email" id="contact-email" class="form-input" required>
+              </div>
+              <div class="form-row">
+                <!-- Message input -->
+                <label for="contact-message">
+                  Message <i class="fa-solid fa-asterisk"></i>
+                </label>
+                <textarea id="contact-message" class="form-input" required></textarea>
+              </div>
+              <div class="form-row">
+                <!-- Submit button -->
+                <button type="submit" class="button button-extended">
+                  <div class="button-text">Send</div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background blur effect -->
+      <div class="blur-effect" aria-hidden="true"></div>
+
+    </div>
+  </main>
+
+  <!-- Site footer -->
+  <footer id="site-footer">
+    <div class="content-wrapper">
+      <!-- Footer column containing the logo and social links -->
+      <div class="footer-col">
+        <div class="logo">
+          <img src="./images/logo-white.svg" alt="logo">
+          <span>Portfolio</span>
+        </div>
+        <p>
+          Website crafted with <i class="fa-solid fa-heart"></i> by Shir Raanan, your dedicated full stack developer.
+        </p>
+        <!-- Social media navigation links -->
+        <nav aria-label="social links">
+          <a href="#" title="Linkedin">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="#" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" title="X Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="#" title="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </nav>
+      </div>
+      <!-- Footer column containing site and project navigation links -->
+      <div class="footer-col">
+        <!-- Site navigation links -->
+        <div class="nav-col">
+          <h4>Browse</h4>
+          <nav aria-label="site links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <!-- Project highlights navigation links -->
+        <div class="nav-col">
+          <h4>Highlights</h4>
+          <nav aria-label="project links">
+            <a href="./projects/discover-the-world/project.html">Discover the World</a>
+            <a href="./projects/free-consulting/project.html">Free Consulting</a>
+            <a href="./projects/here-now/project.html">Here & Now</a>
+            <a href="./projects/outside-the-box/project.html">Outside the Box</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile navigation script -->
+  <script src="./script/navigation.js"></script>
+</body>
+
+</html>

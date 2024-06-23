@@ -1,0 +1,36 @@
+@import "./partial/setup";
+@import "./partial/content";
+@import "./partial/layout";
+@import "./partial/sections";
+
+// Project page styles
+
+// Preview section styles
+#preview {
+  >img {
+    width: 100%;
+    object-fit: cover;
+
+    // Desktop preview
+    &:first-child {
+      display: block;
+      aspect-ratio: 2;
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    // Mobile preview
+    &:nth-child(2) {
+      display: none;
+      max-width: 360px;
+      aspect-ratio: 0.46;
+      margin: 0 auto;
+      
+      @include small-tablet {
+        display: block;
+      }
+    }
+  }
+}

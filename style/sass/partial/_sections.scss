@@ -1,0 +1,93 @@
+// Section layout styles
+.section {
+  position: relative;
+  z-index: 1;
+  padding: $header-height 0;
+
+  &-title {
+    width: $section-title-width;
+    margin: 0 auto;
+
+    +.section-desc {
+      margin-top: 20px;
+    }
+  }
+
+  &-desc {
+    width: $section-content-width;
+    margin: 0 auto;
+
+    +.section-desc {
+      margin-top: 24px;
+    }
+  }
+
+  &-divider {
+    background-color: $color-divider;
+    width: 70%;
+    height: 1px;
+    border: none;
+    margin: 0 auto;
+  }
+
+  .button-bar {
+    &:not(:first-child) {
+      margin-top: 44px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      align-items: center;
+
+      .button {
+        width: 256px;
+
+        &-text {
+          padding: 12px;
+        }
+      }
+    }
+  }
+}
+
+// Hero section styles
+#hero {
+  text-align: center;
+
+  .blur-effect {
+    inset: 0;
+  }
+
+  h1 {
+    width: $section-title-width;
+    margin: 0 auto 32px;
+  }
+
+  p {
+    width: $section-content-width;
+    margin: 0 auto;
+  }
+}
+
+// Technologies section styles
+#tech {
+  padding: 32px 0;
+
+  >ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    gap: 40px;
+
+    @include mobile {
+      font-size: 1.75rem;
+      gap: 32px;
+    }
+
+    @include small-mobile {
+      font-size: 1.5rem;
+      gap: 24px;
+    }
+  }
+}

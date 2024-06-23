@@ -1,0 +1,23 @@
+$font-body: "Varela Round", sans-serif;
+$font-title: "Satisfy", cursive;
+$color-body: #fff;
+$color-primary: #281EFF;
+$color-secondary: #2DFF8C;
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,268 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-primary;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+a {
+  color: $color-text;
+}
+
+// Header styles
+#site-header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: $color-bg;
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $header-py;
+    padding-bottom: $header-py;
+  }
+
+  nav {
+    display: flex;
+    gap: 44px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    a:hover {
+      color: $color-link;
+    }
+
+    // Responsive navigation menu
+    @include tablet {
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      gap: 0;
+      padding-top: $header-height;
+      visibility: hidden;
+      opacity: 0;
+      background-color: $color-bg-hover;
+      transition: all .2s ease-in-out;
+      z-index: -1;
+
+      a {
+        padding: 24px 32px;
+      }
+    }
+  }
+
+  // Responsive navigation button
+  .nav-button {
+    display: none;
+    color: $color-text;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    // Show hamburger icon
+    :first-child {
+      display: block;
+    }
+
+    // Hide close icon
+    :last-child {
+      display: none;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  #nav-toggle {
+    display: none;
+
+    @include tablet {
+      &:checked {
+        ~.nav-button {
+
+          // Hide hamburger icon
+          :first-child {
+            display: none;
+          }
+
+          // Show close icon
+          :last-child {
+            display: block;
+          }
+        }
+
+        // Show navigation menu
+        ~nav {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+// Footer styles
+#site-footer {
+  border-top: 1px solid $color-divider;
+  background-color: $color-bg-alt;
+  padding: 72px 0;
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+
+    @include small-tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // Footer column styles
+  .footer-col {
+    display: flex;
+
+    // Logo and social links column
+    &:first-child {
+      flex-direction: column;
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 448px;
+        font-size: 1.25rem;
+        line-height: 1.666;
+        margin-bottom: 32px;
+
+        .fa-heart {
+          color: $color-secondary;
+        }
+
+        @include small-mobile {
+          font-size: 1.05rem;
+          line-height: 1.5;
+        }
+      }
+
+      nav {
+        display: flex;
+        font-size: 1.75rem;
+        gap: 20px;
+        align-items: center;
+
+        @include small-mobile {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    // Navigation links column
+    &:nth-child(n+2) {
+      gap: 96px;
+
+      @include small-tablet {
+        gap: 64px;
+      }
+
+      @include small-mobile {
+        gap: 48px;
+      }
+    }
+
+    // Navigation links column styles
+    .nav-col {
+      h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+
+        @include small-mobile {
+          font-size: 1.125rem;
+        }
+      }
+
+      &,
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        a:hover {
+          color: $color-text;
+        }
+      }
+
+      a {
+        color: $color-link;
+        white-space: nowrap;
+
+        @include small-mobile {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+// Main content styles
+#site-content {
+  padding-top: $header-height;
+  flex-grow: 1;
+
+  >.content-wrapper {
+    overflow: hidden;
+    position: relative;
+
+    >.blur-effect:last-child {
+      aspect-ratio: 3;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center top;
+    }
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1408px;
+  padding: 0 $container-px;
+  margin: 0 auto;
+}
+
+// Logo styles
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 500;
+
+  img {
+    width: 32px;
+  }
+}
+
+// Background blur effect styles
+.blur-effect {
+  position: absolute;
+  background-image: url("../../images/blur-effect.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}

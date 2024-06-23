@@ -1,0 +1,15 @@
+:root {
+  --bs-font-sans-serif: Heebo, sans-serif;
+  --bs-body-color: #000;
+  --bs-body-color-rgb: 0, 0, 0;
+  --bs-border-color: #0EE1E1;
+  --bs-dark-rgb: 44, 44, 44;
+  --bs-primary-rgb: 14, 225, 225;
+  --bs-secondary-rgb: 229, 238, 255;
+  --bs-info-rgb: 240, 255, 255;
+  --bs-light-rgb: 248, 248, 248;
+}
+
+.border-10 {
+  border-width: 10px !important;
+}
