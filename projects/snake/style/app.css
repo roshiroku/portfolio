@@ -10,14 +10,14 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   min-height: 100vh;
   background-color: #1e1e1e;
   color: #fff;
 }
 
 h1 {
-  margin: 40px 0 20px;
+  margin: 20px 0 10px;
 }
 
 .container {
@@ -29,11 +29,11 @@ h1 {
 
 .settings-section,
 .game-section {
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
   flex: 1;
-  margin: 10px;
+  margin: 5px;
   box-sizing: border-box;
   background-color: #333;
 }
@@ -50,7 +50,7 @@ h1 {
 .settings-section div,
 .game-section div,
 .game-section ul {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 input[type="range"] {
@@ -60,17 +60,17 @@ input[type="range"] {
 .game-section ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .game-section ul li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 8px 16px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -96,12 +96,13 @@ button:disabled {
 
 canvas {
   border: 1px solid #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #fff;
 }
 
 .game-instructions {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   color: #ccc;
+  font-size: 0.9em;
 }
