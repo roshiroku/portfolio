@@ -23,8 +23,8 @@
   }
 }
 
-// Declare Sass variables using corresponding CSS variables.
-// This allows using the shorter Sass variables in the file while enabling responsive changes by modifying CSS variables.
+// Declare SASS variables using corresponding CSS variables.
+// This allows using the shorter SASS variables in the file while enabling responsive changes by modifying CSS variables.
 $font-primary: var(--font-primary);
 $font-secondary: var(--font-secondary);
 $color-text: var(--color-text);
@@ -43,7 +43,7 @@ $color-divider: var(--color-divider);
 $linear-gradient-primary: linear-gradient(to right, $color-primary, $color-secondary);
 $linear-gradient-primary-alt: linear-gradient(to bottom right, $color-secondary-alt, $color-primary-alt);
 
-// Responsive Sass variables
+// Responsive SASS variables
 $header-py: var(--header-py);
 $header-height: var(--header-height);
 $section-title-width: var(--section-title-width);
