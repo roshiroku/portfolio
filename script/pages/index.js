@@ -21,6 +21,11 @@ document.body.innerHTML = /* html */`
   </main>
   ${footer(["discover-the-world", "free-consulting", "here-now", "outside-the-box"])}`;
 
+const navToggleCheckbox = document.getElementById("nav-toggle");
+const navLinks = document.querySelectorAll("#site-header nav a");
+
+navLinks.forEach(link => link.addEventListener("click", () => navToggleCheckbox.checked = false));
+
 function aboutSection() {
   return /* html */`
     <!-- About section -->
