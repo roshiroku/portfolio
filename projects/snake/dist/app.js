@@ -30,12 +30,8 @@ pizzaCountInput.value = settings.pizzaCount.toString();
 enableMiceInput.checked = settings.enableMice;
 initialSpeedValue.innerText = settings.initialSpeed.toFixed(1);
 pizzaCountValue.innerText = settings.pizzaCount.toString();
-const updateSpeedDisplay = () => {
-    initialSpeedValue.innerText = parseFloat(initialSpeedInput.value).toFixed(1);
-};
-const updatePizzaCountDisplay = () => {
-    pizzaCountValue.innerText = pizzaCountInput.value;
-};
+const updateSpeedDisplay = () => initialSpeedValue.innerText = Number(initialSpeedInput.value).toFixed(1);
+const updatePizzaCountDisplay = () => pizzaCountValue.innerText = pizzaCountInput.value;
 initialSpeedInput.addEventListener("input", updateSpeedDisplay);
 pizzaCountInput.addEventListener("input", updatePizzaCountDisplay);
 // Game setup
@@ -43,8 +39,8 @@ let game;
 let snake;
 const setupGame = () => {
     const enableWalls = enableWallsInput.checked;
-    const initialSpeed = parseFloat(initialSpeedInput.value);
-    const pizzaCount = parseInt(pizzaCountInput.value);
+    const initialSpeed = Number(initialSpeedInput.value);
+    const pizzaCount = Number(pizzaCountInput.value);
     const enableMice = enableMiceInput.checked;
     game?.stop();
     snake = new Snake();
@@ -74,8 +70,8 @@ playBtn.addEventListener("click", setupGame);
 saveBtn.addEventListener("click", () => {
     const settings = {
         enableWalls: enableWallsInput.checked,
-        initialSpeed: parseFloat(initialSpeedInput.value),
-        pizzaCount: parseInt(pizzaCountInput.value),
+        initialSpeed: Number(initialSpeedInput.value),
+        pizzaCount: Number(pizzaCountInput.value),
         enableMice: enableMiceInput.checked
     };
     localStorage.setItem('snakeSettings', JSON.stringify(settings));
@@ -83,8 +79,8 @@ saveBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
     localStorage.removeItem('snakeSettings');
     enableWallsInput.checked = defaultSettings.enableWalls;
-    initialSpeedInput.value = defaultSettings.initialSpeed.toString();
-    pizzaCountInput.value = defaultSettings.pizzaCount.toString();
+    initialSpeedInput.value = `${defaultSettings.initialSpeed}`;
+    pizzaCountInput.value = `${defaultSettings.pizzaCount}`;
     enableMiceInput.checked = defaultSettings.enableMice;
     updateSpeedDisplay();
     updatePizzaCountDisplay();
