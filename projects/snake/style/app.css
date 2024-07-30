@@ -11,8 +11,7 @@ body {
   align-items: center;
   margin: 0;
   padding: 20px;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   background-color: #1e1e1e;
   color: #fff;
 }
