@@ -1,0 +1,26 @@
+$header-height: var(--header-height);
+$sidebar-width: var(--sidebar-width);
+
+$gamepad-btn-length: var(--gamepad-btn-length);
+$gamepad-btn-width: var(--gamepad-btn-width);
+$gamepad-btn-margin: calc((100% - (2 * $gamepad-btn-length + $gamepad-btn-width)) / 2);
+
+:root {
+  --header-height: 64px;
+  --sidebar-width: 250px;
+
+  --gamepad-btn-length: 33.5%;
+  --gamepad-btn-width: 22.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul,
+dl {
+  list-style: none;
+}

@@ -1,0 +1,270 @@
+@import "./setup";
+
+body {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+button {
+  font-family: "Silkscreen", sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  gap: 16px;
+  height: $header-height;
+  padding: 8px 16px;
+  // background-color: #000;
+  // color: #fff;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 36px;
+    // color: #fff;
+    font-size: 1.5rem;
+
+    i {
+      --fa-display: block;
+    }
+
+    span {
+      line-height: 1;
+      font-size: 2rem;
+
+      &:first-child {
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  transition: margin-left 0.3s;
+
+  &.shifted {
+    margin-left: $sidebar-width;
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: $header-height;
+
+  &.active {
+    display: block;
+  }
+}
+
+.settings {
+  &-section {
+    position: fixed;
+    top: $header-height;
+    bottom: 0;
+    left: calc(-1 * $sidebar-width);
+    width: $sidebar-width;
+    background-color: #fff;
+    // border-right: 2px solid #000;
+    // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    padding: 16px;
+    overflow-y: auto;
+
+    &.open {
+      transform: translateX($sidebar-width);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      li {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        input[type=checkbox]+label {
+          margin-left: 8px;
+        }
+
+        label+input[type=range] {
+          margin-top: 4px;
+          width: 80%
+        }
+      }
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+
+    button {
+      padding: 4px 8px 6px;
+      color: #fff;
+      font-size: 1.25rem;
+
+      &#save-btn {
+        background-color: #41c300;
+
+        &:hover {
+          background-color: #0aaf00;
+        }
+      }
+
+      &#default-btn {
+        background-color: #ff9e22;
+
+        &:hover {
+          background-color: #fe8d00;
+        }
+      }
+    }
+  }
+}
+
+.game {
+  &-section {
+    padding: 48px;
+    border-radius: 16px;
+    background-color: #dd0074;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &-display {
+    canvas {
+      display: block;
+      background-color: #fff;
+      border: 32px solid black;
+      border-bottom-width: 0;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 32px;
+      color: #fff;
+      background-color: #000;
+      font-size: 1.25rem;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 48px 0;
+    --fa-display: block;
+
+    button {
+      color: #fff;
+      background-color: #000;
+
+      &.active,
+      &:active {
+        background-color: #131313;
+      }
+    }
+
+    #start-btn {
+      width: 20%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      font-size: 1.25rem;
+    }
+  }
+
+  &-pad {
+    position: relative;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #c7006e;
+
+    button {
+      position: absolute;
+      border: none;
+      font-size: 1.5rem;
+
+      &#up-btn,
+      &#down-btn {
+        top: $gamepad-btn-margin;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: $gamepad-btn-width;
+        height: $gamepad-btn-length;
+      }
+
+      &#down-btn {
+        top: unset;
+        bottom: $gamepad-btn-margin;
+      }
+
+      &#left-btn,
+      &#right-btn {
+        top: 0;
+        left: $gamepad-btn-margin;
+        bottom: 0;
+        margin: auto 0;
+        width: $gamepad-btn-length;
+        height: $gamepad-btn-width;
+      }
+
+      &#right-btn {
+        left: unset;
+        right: $gamepad-btn-margin;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: $gamepad-btn-width;
+      height: $gamepad-btn-width;
+      margin: auto;
+      background-color: #000;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

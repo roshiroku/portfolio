@@ -1,5 +1,6 @@
 import { Pizza, Mouse } from "./game/Food.js";
 import Game from "./game/Game.js";
+import Point from "./game/Point.js";
 import Snake from "./game/Snake.js";
 import { HorizontalWall, VerticalWall } from "./game/Wall.js";
 
@@ -20,12 +21,20 @@ const pizzaCountInput = document.getElementById("pizza-count") as HTMLInputEleme
 const enableMiceInput = document.getElementById("enable-mice") as HTMLInputElement;
 const initialSpeedValue = document.getElementById("initial-speed-value")!;
 const pizzaCountValue = document.getElementById("pizza-count-value")!;
-const canvas = document.getElementById("game-canvas") as HTMLCanvasElement;
+const mainEl = document.querySelector("main")!;
+const lightboxEl = document.querySelector(".lightbox")!;
+const asideEl = document.querySelector(".settings-section")!;
+const canvasEl = document.getElementById("game-canvas") as HTMLCanvasElement;
 const scoreEl = document.getElementById("game-score")!;
 const speedEl = document.getElementById("current-speed")!;
-const playBtn = document.getElementById("play-btn")!;
+const menuBtn = document.getElementById("menu-btn")!;
+const startBtn = document.getElementById("start-btn")!;
 const saveBtn = document.getElementById("save-btn")!;
-const resetBtn = document.getElementById("reset-btn")!;
+const defaultBtn = document.getElementById("default-btn")!;
+const upBtn = document.getElementById("up-btn")!;
+const downBtn = document.getElementById("down-btn")!;
+const leftBtn = document.getElementById("left-btn")!;
+const rightBtn = document.getElementById("right-btn")!;
 
 // Update UI elements with loaded settings
 enableWallsInput.checked = settings.enableWalls;
@@ -45,7 +54,52 @@ pizzaCountInput.addEventListener("input", updatePizzaCountDisplay);
 let game: Game;
 let snake: Snake;
 
-const setupGame = () => {
+// Event listeners
+
+saveBtn.addEventListener("click", () => {
+  const settings = {
+    enableWalls: enableWallsInput.checked,
+    initialSpeed: Number(initialSpeedInput.value),
+    pizzaCount: Number(pizzaCountInput.value),
+    enableMice: enableMiceInput.checked
+  };
+  localStorage.setItem('snakeSettings', JSON.stringify(settings));
+  closeSettings();
+  setupGame();
+});
+
+defaultBtn.addEventListener("click", () => {
+  localStorage.removeItem('snakeSettings');
+  enableWallsInput.checked = defaultSettings.enableWalls;
+  initialSpeedInput.value = `${defaultSettings.initialSpeed}`;
+  pizzaCountInput.value = `${defaultSettings.pizzaCount}`;
+  enableMiceInput.checked = defaultSettings.enableMice;
+  updateSpeedDisplay();
+  updatePizzaCountDisplay();
+  closeSettings();
+  setupGame();
+});
+
+menuBtn.addEventListener("click", () => {
+  asideEl.classList.toggle("open");
+  mainEl.classList.toggle("shifted");
+  lightboxEl.classList.toggle("active");
+  for (const el of menuBtn.children) el.classList.toggle("hidden");
+});
+
+window.addEventListener("keydown", onKeyDown);
+window.addEventListener("keyup", onKeyUp);
+startBtn.addEventListener("click", setupGame);
+lightboxEl.addEventListener("click", closeSettings);
+upBtn.addEventListener("click", () => snake.turn(Point.up));
+downBtn.addEventListener("click", () => snake.turn(Point.down));
+leftBtn.addEventListener("click", () => snake.turn(Point.left));
+rightBtn.addEventListener("click", () => snake.turn(Point.right));
+
+// Initial game setup
+setupGame();
+
+function setupGame() {
   const enableWalls = enableWallsInput.checked;
   const initialSpeed = Number(initialSpeedInput.value);
   const pizzaCount = Number(pizzaCountInput.value);
@@ -53,9 +107,10 @@ const setupGame = () => {
 
   game?.stop();
   snake = new Snake();
-  game = new Game(canvas, {
+  game = new Game(canvasEl, {
     width: 21,
     height: 21,
+    scale: 18,
     onScore: () => {
       scoreEl.innerText = `${game.score}`;
       speedEl.innerText = `${Math.floor(100 * snake.speed) / 100}`;
@@ -83,30 +138,43 @@ const setupGame = () => {
   }
 
   game.start();
-};
+}
 
-// Event listeners
-playBtn.addEventListener("click", setupGame);
+function closeSettings() {
+  asideEl.classList.remove("open");
+  mainEl.classList.remove("shifted");
+  lightboxEl.classList.remove("active");
+  menuBtn.children[0].classList.remove("hidden");
+  menuBtn.children[1].classList.add("hidden");
+}
 
-saveBtn.addEventListener("click", () => {
-  const settings = {
-    enableWalls: enableWallsInput.checked,
-    initialSpeed: Number(initialSpeedInput.value),
-    pizzaCount: Number(pizzaCountInput.value),
-    enableMice: enableMiceInput.checked
-  };
-  localStorage.setItem('snakeSettings', JSON.stringify(settings));
-});
+function onKeyDown(e: KeyboardEvent) {
+  switch (e.key) {
+    case "ArrowUp":
+      return upBtn.classList.add("active");
+    case "ArrowDown":
+      return downBtn.classList.add("active");
+    case "ArrowLeft":
+      return leftBtn.classList.add("active");
+    case "ArrowRight":
+      return rightBtn.classList.add("active");
+    case "Enter":
+      setupGame();
+      startBtn.classList.add("active");
+  }
+}
 
-resetBtn.addEventListener("click", () => {
-  localStorage.removeItem('snakeSettings');
-  enableWallsInput.checked = defaultSettings.enableWalls;
-  initialSpeedInput.value = `${defaultSettings.initialSpeed}`;
-  pizzaCountInput.value = `${defaultSettings.pizzaCount}`;
-  enableMiceInput.checked = defaultSettings.enableMice;
-  updateSpeedDisplay();
-  updatePizzaCountDisplay();
-});
-
-// Initial game setup
-setupGame();
+function onKeyUp(e: KeyboardEvent) {
+  switch (e.key) {
+    case "ArrowUp":
+      return upBtn.classList.remove("active");
+    case "ArrowDown":
+      return downBtn.classList.remove("active");
+    case "ArrowLeft":
+      return leftBtn.classList.remove("active");
+    case "ArrowRight":
+      return rightBtn.classList.remove("active");
+    case "Enter":
+      startBtn.classList.remove("active");
+  }
+}

@@ -61,7 +61,6 @@ export class Mouse extends Food {
         super(...arguments);
         this.color = "silver";
         this.rate = 0.01;
-        this.value = 2;
         this.nextSpawnTime = 0;
     }
     start() {

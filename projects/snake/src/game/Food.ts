@@ -65,7 +65,6 @@ export class Pizza extends Food {
 export class Mouse extends Food {
   color = "silver";
   rate = 0.01;
-  value = 2;
   nextSpawnTime = 0;
   snake?: Snake;
 

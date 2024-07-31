@@ -1,0 +1,239 @@
+:root {
+  --header-height: 64px;
+  --sidebar-width: 250px;
+  --gamepad-btn-length: 33.5%;
+  --gamepad-btn-width: 22.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul,
+dl {
+  list-style: none;
+}
+
+body {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+button {
+  font-family: "Silkscreen", sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: var(--header-height);
+  padding: 8px 16px;
+}
+header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 36px;
+  font-size: 1.5rem;
+}
+header button i {
+  --fa-display: block;
+}
+header button span {
+  line-height: 1;
+  font-size: 2rem;
+}
+header button span:first-child {
+  font-size: 2.25rem;
+}
+header h1 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  transition: margin-left 0.3s;
+}
+main.shifted {
+  margin-left: var(--sidebar-width);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+}
+.lightbox.active {
+  display: block;
+}
+
+.settings-section {
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  left: calc(-1 * var(--sidebar-width));
+  width: var(--sidebar-width);
+  background-color: #fff;
+  transition: transform 0.3s;
+  padding: 16px;
+  overflow-y: auto;
+}
+.settings-section.open {
+  transform: translateX(var(--sidebar-width));
+}
+.settings-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.settings-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.settings-section ul li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.settings-section ul li input[type=checkbox] + label {
+  margin-left: 8px;
+}
+.settings-section ul li label + input[type=range] {
+  margin-top: 4px;
+  width: 80%;
+}
+.settings-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.settings-buttons button {
+  padding: 4px 8px 6px;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.settings-buttons button#save-btn {
+  background-color: #41c300;
+}
+.settings-buttons button#save-btn:hover {
+  background-color: #0aaf00;
+}
+.settings-buttons button#default-btn {
+  background-color: #ff9e22;
+}
+.settings-buttons button#default-btn:hover {
+  background-color: #fe8d00;
+}
+
+.game-section {
+  padding: 48px;
+  border-radius: 16px;
+  background-color: #dd0074;
+}
+.game-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.game-display canvas {
+  display: block;
+  background-color: #fff;
+  border: 32px solid black;
+  border-bottom-width: 0;
+}
+.game-display ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  color: #fff;
+  background-color: #000;
+  font-size: 1.25rem;
+}
+.game-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 48px 0;
+  --fa-display: block;
+}
+.game-buttons button {
+  color: #fff;
+  background-color: #000;
+}
+.game-buttons button.active, .game-buttons button:active {
+  background-color: #131313;
+}
+.game-buttons #start-btn {
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+.game-pad {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #c7006e;
+}
+.game-pad button {
+  position: absolute;
+  border: none;
+  font-size: 1.5rem;
+}
+.game-pad button#up-btn, .game-pad button#down-btn {
+  top: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: var(--gamepad-btn-width);
+  height: var(--gamepad-btn-length);
+}
+.game-pad button#down-btn {
+  top: unset;
+  bottom: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+}
+.game-pad button#left-btn, .game-pad button#right-btn {
+  top: 0;
+  left: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+  bottom: 0;
+  margin: auto 0;
+  width: var(--gamepad-btn-length);
+  height: var(--gamepad-btn-width);
+}
+.game-pad button#right-btn {
+  left: unset;
+  right: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+}
+.game-pad:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--gamepad-btn-width);
+  height: var(--gamepad-btn-width);
+  margin: auto;
+  background-color: #000;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=app.css.map */
