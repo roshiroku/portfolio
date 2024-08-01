@@ -180,7 +180,7 @@ main.shifted {
   background-color: #000;
 }
 .game-buttons button.active, .game-buttons button:active {
-  background-color: #131313;
+  background-color: #242424;
 }
 .game-buttons #start-btn {
   width: 20%;
