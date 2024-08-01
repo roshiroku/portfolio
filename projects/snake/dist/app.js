@@ -39,7 +39,6 @@ pizzaCountInput.value = settings.pizzaCount.toString();
 enableMiceInput.checked = settings.enableMice;
 initialSpeedValue.innerText = settings.initialSpeed.toFixed(1);
 pizzaCountValue.innerText = settings.pizzaCount.toString();
-const onResize = () => game.scale = window.innerWidth > 600 && window.innerHeight > 900 ? 18 : 12;
 const updateSpeedDisplay = () => initialSpeedValue.innerText = Number(initialSpeedInput.value).toFixed(1);
 const updatePizzaCountDisplay = () => pizzaCountValue.innerText = pizzaCountInput.value;
 initialSpeedInput.addEventListener("input", updateSpeedDisplay);
@@ -152,4 +151,8 @@ function onKeyUp(e) {
         case "Enter":
             startBtn.classList.remove("active");
     }
+}
+function onResize() {
+    game.scale = window.innerWidth > 600 && window.innerHeight > 900 ? 18 : 12;
+    game.draw();
 }

@@ -40,11 +40,8 @@ class Game {
         this.update = () => {
             if (!this.active)
                 return;
-            this.ctx.clearRect(0, 0, this.width, this.height);
-            this.elements.forEach(el => {
-                el.update();
-                el.draw();
-            });
+            this.elements.forEach(el => el.update());
+            this.draw();
             requestAnimationFrame(this.update);
         };
         this.canvas = canvas;
@@ -72,6 +69,10 @@ class Game {
         this.active = false;
         Timer.stop();
         this.elements.forEach(el => el.stop());
+    }
+    draw() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        this.elements.forEach(el => el.draw());
     }
     addElement(...elements) {
         elements.forEach(el => {
