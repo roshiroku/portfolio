@@ -1,0 +1,120 @@
+.game {
+  &-section {
+    padding: $spacing-lg;
+    border-radius: 16px;
+    background-color: #dd0074;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &-display {
+    canvas {
+      display: block;
+      background-color: #fff;
+      border: $spacing-md solid black;
+      border-bottom-width: 0;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: $spacing-sm $spacing-md;
+      color: #fff;
+      background-color: #000;
+      font-size: $text-md;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: $spacing-lg 0;
+    --fa-display: block;
+
+    button {
+      color: #fff;
+      background-color: #000;
+
+      &.active,
+      &:active {
+        background-color: #242424;
+      }
+
+      &#start-btn {
+        width: 20%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        font-size: $text-md;
+
+        @include mobile {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  &-pad {
+    position: relative;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #c7006e;
+
+    button {
+      position: absolute;
+      border: none;
+      font-size: $text-lg;
+
+      &#up-btn,
+      &#down-btn {
+        top: $gamepad-btn-margin;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: $gamepad-btn-width;
+        height: $gamepad-btn-length;
+      }
+
+      &#down-btn {
+        top: unset;
+        bottom: $gamepad-btn-margin;
+      }
+
+      &#left-btn,
+      &#right-btn {
+        top: 0;
+        left: $gamepad-btn-margin;
+        bottom: 0;
+        margin: auto 0;
+        width: $gamepad-btn-length;
+        height: $gamepad-btn-width;
+      }
+
+      &#right-btn {
+        left: unset;
+        right: $gamepad-btn-margin;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: $gamepad-btn-width;
+      height: $gamepad-btn-width;
+      margin: auto;
+      background-color: #000;
+    }
+
+    @include mobile {
+      width: 50%;
+    }
+  }
+}

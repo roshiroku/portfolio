@@ -1,16 +1,44 @@
+@mixin mobile {
+
+  @media (max-width: 600px),
+  (max-height: 900px) {
+    @content;
+  }
+}
+
+$text-lg: var(--text-lg);
+$text-md: var(--text-md);
+$text-sm: var(--text-sm);
+$spacing-lg: var(--spacing-lg);
+$spacing-md: var(--spacing-md);
+$spacing-sm: var(--spacing-sm);
 $header-height: var(--header-height);
 $sidebar-width: var(--sidebar-width);
-
 $gamepad-btn-length: var(--gamepad-btn-length);
 $gamepad-btn-width: var(--gamepad-btn-width);
 $gamepad-btn-margin: calc((100% - (2 * $gamepad-btn-length + $gamepad-btn-width)) / 2);
 
 :root {
+  --text-lg: 1.5rem;
+  --text-md: 1.25rem;
+  --text-sm: 1rem;
+  --spacing-lg: 48px;
+  --spacing-md: 32px;
+  --spacing-sm: 16px;
   --header-height: 64px;
   --sidebar-width: 250px;
-
   --gamepad-btn-length: 33.5%;
   --gamepad-btn-width: 22.5%;
+
+  @include mobile {
+    --text-lg: 1.25rem;
+    --text-md: 1rem;
+    --text-sm: 0.75rem;
+    --spacing-lg: 32px;
+    --spacing-md: 16px;
+    --spacing-sm: 8px;
+    --sidebar-width: 100%;
+  }
 }
 
 * {

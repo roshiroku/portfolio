@@ -1,4 +1,5 @@
 @import "./setup";
+@import "./game";
 
 body {
   font-family: "Silkscreen", sans-serif;
@@ -21,12 +22,9 @@ button {
 header {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   gap: 16px;
   height: $header-height;
   padding: 8px 16px;
-  // background-color: #000;
-  // color: #fff;
 
   button {
     display: flex;
@@ -34,7 +32,6 @@ header {
     justify-content: center;
     width: 28px;
     height: 36px;
-    // color: #fff;
     font-size: 1.5rem;
 
     i {
@@ -64,6 +61,10 @@ main {
 
   &.shifted {
     margin-left: $sidebar-width;
+
+    @include mobile {
+      margin-left: 0;
+    }
   }
 }
 
@@ -86,8 +87,6 @@ main {
     left: calc(-1 * $sidebar-width);
     width: $sidebar-width;
     background-color: #fff;
-    // border-right: 2px solid #000;
-    // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
     padding: 16px;
     overflow-y: auto;
@@ -148,119 +147,6 @@ main {
           background-color: #fe8d00;
         }
       }
-    }
-  }
-}
-
-.game {
-  &-section {
-    padding: 48px;
-    border-radius: 16px;
-    background-color: #dd0074;
-  }
-
-  &-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  &-display {
-    canvas {
-      display: block;
-      background-color: #fff;
-      border: 32px solid black;
-      border-bottom-width: 0;
-    }
-
-    ul {
-      display: flex;
-      justify-content: space-between;
-      padding: 16px 32px;
-      color: #fff;
-      background-color: #000;
-      font-size: 1.25rem;
-    }
-  }
-
-  &-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin: 48px 0;
-    --fa-display: block;
-
-    button {
-      color: #fff;
-      background-color: #000;
-
-      &.active,
-      &:active {
-        background-color: #242424;
-      }
-    }
-
-    #start-btn {
-      width: 20%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      font-size: 1.25rem;
-    }
-  }
-
-  &-pad {
-    position: relative;
-    width: 40%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background-color: #c7006e;
-
-    button {
-      position: absolute;
-      border: none;
-      font-size: 1.5rem;
-
-      &#up-btn,
-      &#down-btn {
-        top: $gamepad-btn-margin;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: $gamepad-btn-width;
-        height: $gamepad-btn-length;
-      }
-
-      &#down-btn {
-        top: unset;
-        bottom: $gamepad-btn-margin;
-      }
-
-      &#left-btn,
-      &#right-btn {
-        top: 0;
-        left: $gamepad-btn-margin;
-        bottom: 0;
-        margin: auto 0;
-        width: $gamepad-btn-length;
-        height: $gamepad-btn-width;
-      }
-
-      &#right-btn {
-        left: unset;
-        right: $gamepad-btn-margin;
-      }
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      width: $gamepad-btn-width;
-      height: $gamepad-btn-width;
-      margin: auto;
-      background-color: #000;
     }
   }
 }

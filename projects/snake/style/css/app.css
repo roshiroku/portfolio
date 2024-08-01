@@ -1,8 +1,25 @@
 :root {
+  --text-lg: 1.5rem;
+  --text-md: 1.25rem;
+  --text-sm: 1rem;
+  --spacing-lg: 48px;
+  --spacing-md: 32px;
+  --spacing-sm: 16px;
   --header-height: 64px;
   --sidebar-width: 250px;
   --gamepad-btn-length: 33.5%;
   --gamepad-btn-width: 22.5%;
+}
+@media (max-width: 600px), (max-height: 900px) {
+  :root {
+    --text-lg: 1.25rem;
+    --text-md: 1rem;
+    --text-sm: 0.75rem;
+    --spacing-lg: 32px;
+    --spacing-md: 16px;
+    --spacing-sm: 8px;
+    --sidebar-width: 100%;
+  }
 }
 
 * {
@@ -15,6 +32,108 @@ ol,
 ul,
 dl {
   list-style: none;
+}
+
+.game-section {
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  background-color: #dd0074;
+}
+.game-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.game-display canvas {
+  display: block;
+  background-color: #fff;
+  border: var(--spacing-md) solid black;
+  border-bottom-width: 0;
+}
+.game-display ul {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: #fff;
+  background-color: #000;
+  font-size: var(--text-md);
+}
+.game-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: var(--spacing-lg) 0;
+  --fa-display: block;
+}
+.game-buttons button {
+  color: #fff;
+  background-color: #000;
+}
+.game-buttons button.active, .game-buttons button:active {
+  background-color: #242424;
+}
+.game-buttons button#start-btn {
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: var(--text-md);
+}
+@media (max-width: 600px), (max-height: 900px) {
+  .game-buttons button#start-btn {
+    width: 25%;
+  }
+}
+.game-pad {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #c7006e;
+}
+.game-pad button {
+  position: absolute;
+  border: none;
+  font-size: var(--text-lg);
+}
+.game-pad button#up-btn, .game-pad button#down-btn {
+  top: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: var(--gamepad-btn-width);
+  height: var(--gamepad-btn-length);
+}
+.game-pad button#down-btn {
+  top: unset;
+  bottom: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+}
+.game-pad button#left-btn, .game-pad button#right-btn {
+  top: 0;
+  left: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+  bottom: 0;
+  margin: auto 0;
+  width: var(--gamepad-btn-length);
+  height: var(--gamepad-btn-width);
+}
+.game-pad button#right-btn {
+  left: unset;
+  right: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
+}
+.game-pad:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--gamepad-btn-width);
+  height: var(--gamepad-btn-width);
+  margin: auto;
+  background-color: #000;
+}
+@media (max-width: 600px), (max-height: 900px) {
+  .game-pad {
+    width: 50%;
+  }
 }
 
 body {
@@ -72,6 +191,11 @@ main {
 }
 main.shifted {
   margin-left: var(--sidebar-width);
+}
+@media (max-width: 600px), (max-height: 900px) {
+  main.shifted {
+    margin-left: 0;
+  }
 }
 
 .lightbox {
@@ -140,98 +264,6 @@ main.shifted {
 }
 .settings-buttons button#default-btn:hover {
   background-color: #fe8d00;
-}
-
-.game-section {
-  padding: 48px;
-  border-radius: 16px;
-  background-color: #dd0074;
-}
-.game-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-.game-display canvas {
-  display: block;
-  background-color: #fff;
-  border: 32px solid black;
-  border-bottom-width: 0;
-}
-.game-display ul {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 32px;
-  color: #fff;
-  background-color: #000;
-  font-size: 1.25rem;
-}
-.game-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  margin: 48px 0;
-  --fa-display: block;
-}
-.game-buttons button {
-  color: #fff;
-  background-color: #000;
-}
-.game-buttons button.active, .game-buttons button:active {
-  background-color: #242424;
-}
-.game-buttons #start-btn {
-  width: 20%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  font-size: 1.25rem;
-}
-.game-pad {
-  position: relative;
-  width: 40%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: #c7006e;
-}
-.game-pad button {
-  position: absolute;
-  border: none;
-  font-size: 1.5rem;
-}
-.game-pad button#up-btn, .game-pad button#down-btn {
-  top: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: var(--gamepad-btn-width);
-  height: var(--gamepad-btn-length);
-}
-.game-pad button#down-btn {
-  top: unset;
-  bottom: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
-}
-.game-pad button#left-btn, .game-pad button#right-btn {
-  top: 0;
-  left: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
-  bottom: 0;
-  margin: auto 0;
-  width: var(--gamepad-btn-length);
-  height: var(--gamepad-btn-width);
-}
-.game-pad button#right-btn {
-  left: unset;
-  right: calc((100% - (2 * var(--gamepad-btn-length) + var(--gamepad-btn-width))) / 2);
-}
-.game-pad:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: var(--gamepad-btn-width);
-  height: var(--gamepad-btn-width);
-  margin: auto;
-  background-color: #000;
 }
 
 .hidden {

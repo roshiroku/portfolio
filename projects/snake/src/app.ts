@@ -44,6 +44,7 @@ enableMiceInput.checked = settings.enableMice;
 initialSpeedValue.innerText = settings.initialSpeed.toFixed(1);
 pizzaCountValue.innerText = settings.pizzaCount.toString();
 
+const onResize = () => game.scale = window.innerWidth > 600 && window.innerHeight > 900 ? 18 : 12;
 const updateSpeedDisplay = () => initialSpeedValue.innerText = Number(initialSpeedInput.value).toFixed(1);
 const updatePizzaCountDisplay = () => pizzaCountValue.innerText = pizzaCountInput.value;
 
@@ -95,6 +96,7 @@ upBtn.addEventListener("click", () => snake.turn(Point.up));
 downBtn.addEventListener("click", () => snake.turn(Point.down));
 leftBtn.addEventListener("click", () => snake.turn(Point.left));
 rightBtn.addEventListener("click", () => snake.turn(Point.right));
+window.addEventListener("resize", onResize);
 
 // Initial game setup
 setupGame();
@@ -110,7 +112,6 @@ function setupGame() {
   game = new Game(canvasEl, {
     width: 21,
     height: 21,
-    scale: 18,
     onScore: () => {
       scoreEl.innerText = `${game.score}`;
       speedEl.innerText = `${Math.floor(100 * snake.speed) / 100}`;
@@ -137,6 +138,7 @@ function setupGame() {
     game.addElement(new Mouse());
   }
 
+  onResize();
   game.start();
 }
 
