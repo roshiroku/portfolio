@@ -34,7 +34,7 @@ export default class Game {
   set scale(scale) {
     this.canvas.width = this.width * scale;
     this.canvas.height = this.height * scale;
-    this.ctx.scale(scale / this.scale, scale / this.scale);
+    this.ctx.scale(scale, scale);
     this.#scale = scale;
   }
 

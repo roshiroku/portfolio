@@ -29,7 +29,7 @@ class Game {
     set scale(scale) {
         this.canvas.width = this.width * scale;
         this.canvas.height = this.height * scale;
-        this.ctx.scale(scale / this.scale, scale / this.scale);
+        this.ctx.scale(scale, scale);
         __classPrivateFieldSet(this, _Game_scale, scale, "f");
     }
     constructor(canvas, { width = 21, height = 21, scale = 20, onScore = () => { }, onGameOver = () => { } } = {}) {
