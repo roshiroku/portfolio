@@ -8,7 +8,7 @@ export default class Game {
   readonly elements: Element[] = [];
   readonly width;
   readonly height;
-  readonly scale;
+  #scale = 1;
   readonly canvas;
   readonly ctx;
   onScore: () => void;
@@ -27,6 +27,17 @@ export default class Game {
     this.onScore();
   }
 
+  get scale() {
+    return this.#scale;
+  }
+
+  set scale(scale) {
+    this.canvas.width = this.width * scale;
+    this.canvas.height = this.height * scale;
+    this.ctx.scale(scale / this.scale, scale / this.scale);
+    this.#scale = scale;
+  }
+
   constructor(canvas: HTMLCanvasElement, {
     width = 21,
     height = 21,
@@ -34,14 +45,11 @@ export default class Game {
     onScore = () => { },
     onGameOver = () => { }
   } = {}) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d")!;
     this.width = width;
     this.height = height;
     this.scale = scale;
-    this.canvas = canvas;
-    this.ctx = canvas.getContext("2d")!;
-    canvas.width = this.width * this.scale;
-    canvas.height = this.height * this.scale;
-    this.ctx.scale(this.scale, this.scale);
     this.onScore = onScore;
     this.onGameOver = onGameOver;
   }
