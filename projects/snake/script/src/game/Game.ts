@@ -12,7 +12,8 @@ export default class Game {
   readonly canvas;
   readonly ctx;
   onScore: () => void;
-  onGameOver: () => void;
+  onStart: () => void;
+  onStop: () => void;
 
   get size() {
     return new Point(this.width, this.height);
@@ -43,7 +44,8 @@ export default class Game {
     height = 21,
     scale = 20,
     onScore = () => { },
-    onGameOver = () => { }
+    onStart = () => { },
+    onStop = () => { }
   } = {}) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d")!;
@@ -51,7 +53,8 @@ export default class Game {
     this.height = height;
     this.scale = scale;
     this.onScore = onScore;
-    this.onGameOver = onGameOver;
+    this.onStart = onStart;
+    this.onStop = onStop;
   }
 
   start() {
@@ -63,6 +66,7 @@ export default class Game {
       el.start();
       el.draw();
     });
+    this.onStart();
     requestAnimationFrame(this.update);
   }
 
@@ -81,6 +85,7 @@ export default class Game {
     this.active = false;
     Timer.stop();
     this.elements.forEach(el => el.stop());
+    this.onStop();
   }
 
   draw() {

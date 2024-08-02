@@ -32,7 +32,7 @@ class Game {
         this.ctx.scale(scale, scale);
         __classPrivateFieldSet(this, _Game_scale, scale, "f");
     }
-    constructor(canvas, { width = 21, height = 21, scale = 20, onScore = () => { }, onGameOver = () => { } } = {}) {
+    constructor(canvas, { width = 21, height = 21, scale = 20, onScore = () => { }, onStart = () => { }, onStop = () => { } } = {}) {
         this.active = false;
         _Game_score.set(this, 0);
         this.elements = [];
@@ -50,7 +50,8 @@ class Game {
         this.height = height;
         this.scale = scale;
         this.onScore = onScore;
-        this.onGameOver = onGameOver;
+        this.onStart = onStart;
+        this.onStop = onStop;
     }
     start() {
         if (this.active)
@@ -61,6 +62,7 @@ class Game {
             el.start();
             el.draw();
         });
+        this.onStart();
         requestAnimationFrame(this.update);
     }
     stop() {
@@ -69,6 +71,7 @@ class Game {
         this.active = false;
         Timer.stop();
         this.elements.forEach(el => el.stop());
+        this.onStop();
     }
     draw() {
         this.ctx.clearRect(0, 0, this.width, this.height);
