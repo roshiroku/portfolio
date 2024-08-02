@@ -17,6 +17,7 @@ $sidebar-width: var(--sidebar-width);
 $gamepad-btn-length: var(--gamepad-btn-length);
 $gamepad-btn-width: var(--gamepad-btn-width);
 $gamepad-btn-margin: calc((100% - (2 * $gamepad-btn-length + $gamepad-btn-width)) / 2);
+$display-width: var(--display-width);
 
 :root {
   --text-lg: 1.5rem;
@@ -29,6 +30,7 @@ $gamepad-btn-margin: calc((100% - (2 * $gamepad-btn-length + $gamepad-btn-width)
   --sidebar-width: 250px;
   --gamepad-btn-length: 33.5%;
   --gamepad-btn-width: 22.5%;
+  --display-width: 442px;
 
   @include mobile {
     --text-lg: 1.25rem;
@@ -38,6 +40,7 @@ $gamepad-btn-margin: calc((100% - (2 * $gamepad-btn-length + $gamepad-btn-width)
     --spacing-md: 16px;
     --spacing-sm: 8px;
     --sidebar-width: 100%;
+    --display-width: 284px;
   }
 }
 

@@ -15,6 +15,7 @@
   &-display {
     canvas {
       display: block;
+      width: $display-width;
       background-color: #fff;
       border: $spacing-md solid black;
       border-bottom-width: 0;

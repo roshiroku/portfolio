@@ -9,6 +9,7 @@
   --sidebar-width: 250px;
   --gamepad-btn-length: 33.5%;
   --gamepad-btn-width: 22.5%;
+  --display-width: 442px;
 }
 @media (max-width: 600px), (max-height: 900px) {
   :root {
@@ -19,6 +20,7 @@
     --spacing-md: 16px;
     --spacing-sm: 8px;
     --sidebar-width: 100%;
+    --display-width: 284px;
   }
 }
 
@@ -47,6 +49,7 @@ dl {
 }
 .game-display canvas {
   display: block;
+  width: var(--display-width);
   background-color: #fff;
   border: var(--spacing-md) solid black;
   border-bottom-width: 0;
