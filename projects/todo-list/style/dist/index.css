@@ -1,0 +1,231 @@
+:root {
+  --font-size: 1.25rem;
+  --heading-size: 2.5rem;
+  --color-alpha: 1;
+  --color-alpha-from: 1;
+  --color-alpha-to: 1;
+}
+@media (max-width: 640px) {
+  :root {
+    --font-size: 1rem;
+    --heading-size: 2rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background: rgba(7, 4, 11, var(--color-alpha));
+  color: rgb(255, 255, 255);
+  margin: 32px 0;
+}
+
+h1 {
+  font-size: var(--heading-size);
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+input,
+select {
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  width: 640px;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 16px;
+  background: rgba(145, 70, 255, var(--color-alpha));
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1;
+}
+.button:hover, .button:active {
+  background: rgba(151, 113, 208, var(--color-alpha));
+}
+@media (max-width: 640px) {
+  .button {
+    line-height: 0.75;
+  }
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.icon-button:hover i, .icon-button:active i {
+  color: rgba(145, 70, 255, var(--color-alpha));
+}
+@media (max-width: 640px) {
+  .icon-button {
+    width: 32px;
+  }
+}
+
+.task-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.task-input input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  outline: 0;
+  line-height: 1.4;
+  min-width: 0;
+  font-size: var(--font-size);
+  flex-grow: 1;
+}
+.task-input input:hover, .task-input input:focus {
+  border-color: rgba(145, 70, 255, var(--color-alpha));
+}
+@media (max-width: 640px) {
+  .task-input input {
+    line-height: 1.5;
+  }
+}
+@media (max-width: 640px) {
+  .task-input {
+    margin-bottom: 16px;
+  }
+}
+.task-filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(145, 70, 255, var(--color-alpha));
+  color: rgb(0, 0, 0);
+  font-size: var(--font-size);
+}
+.task-filter label {
+  font-weight: 700;
+}
+.task-filter select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  outline: 0;
+  line-height: 1.4;
+  min-width: 0;
+  cursor: pointer;
+}
+.task-filter select:hover, .task-filter select:focus {
+  border-color: rgba(24, 14, 37, var(--color-alpha));
+}
+@media (max-width: 640px) {
+  .task-filter select {
+    line-height: 1.5;
+  }
+}
+@media (max-width: 640px) {
+  .task-filter {
+    gap: 8px;
+    padding: 8px;
+  }
+}
+.task-items {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  font-size: var(--font-size);
+  background: rgba(24, 14, 37, var(--color-alpha));
+  padding-top: 4px;
+}
+.task-items.filter-complete .task-item:not(.complete) {
+  display: none;
+}
+.task-items.filter-incomplete .task-item.complete {
+  display: none;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  gap: 16px;
+}
+.task-item:hover {
+  border-color: rgba(145, 70, 255, var(--color-alpha));
+}
+.task-item .task-completion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task-item .task-text {
+  flex-grow: 1;
+}
+.task-item .task-text input {
+  padding: 4px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  outline: 0;
+  line-height: 1.4;
+  min-width: 0;
+  width: 100%;
+}
+.task-item .task-text input:hover, .task-item .task-text input:focus {
+  border-color: rgba(145, 70, 255, var(--color-alpha));
+}
+@media (max-width: 640px) {
+  .task-item .task-text input {
+    line-height: 1.5;
+  }
+}
+.task-item .task-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+@media (max-width: 640px) {
+  .task-item .task-buttons {
+    gap: 4px;
+  }
+}
+.task-item.complete .task-text {
+  text-decoration: line-through;
+}
+@media (max-width: 640px) {
+  .task-item {
+    padding: 8px;
+    gap: 8px;
+  }
+}/*# sourceMappingURL=index.css.map */
