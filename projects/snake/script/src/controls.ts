@@ -1,5 +1,5 @@
 import { setupGame, state } from "./game.js";
-import Point from "./snake/Point.js";
+import Point from "./core/Point.js";
 
 const startBtn = document.getElementById("start-btn")!;
 const upBtn = document.getElementById("up-btn")!;

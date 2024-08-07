@@ -1,8 +1,8 @@
 import { settings } from './config.js';
-import { Mouse, Pizza } from './snake/Food.js';
-import Game from "./snake/Game.js";
-import Snake from "./snake/Snake.js";
-import { HorizontalWall, VerticalWall } from './snake/Wall.js';
+import { Mouse, Pizza } from './core/Food.js';
+import Game from "./core/Game.js";
+import Snake from "./core/Snake.js";
+import { HorizontalWall, VerticalWall } from './core/Wall.js';
 const scoreEl = document.getElementById("game-score");
 const speedEl = document.getElementById("current-speed");
 const canvasEl = document.getElementById("game-canvas");
