@@ -1,0 +1,16 @@
+@import "setup";
+@import "layout";
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .menu-item {
+    font-size: 1.2rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+}

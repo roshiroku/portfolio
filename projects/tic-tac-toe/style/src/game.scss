@@ -1,0 +1,80 @@
+@import "setup";
+@import "layout";
+
+body {
+  flex-direction: column;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+
+  &.game-over {
+    button {
+      pointer-events: none;
+    }
+  }
+}
+
+#game-board {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.75rem;
+    border-radius: 8px;
+    border: 2px solid currentColor;
+    background-color: $secondary-color;
+    color: $primary-color;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition-property: background-color, color, border, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    &:hover {
+      .x-turn &:empty {
+        background-color: lighten($primary-color, 40%);
+        color: $primary-color;
+      }
+
+      .o-turn &:empty {
+        background-color: lighten($accent-color, 40%);
+        color: $accent-color;
+      }
+    }
+
+    &.cell-x {
+      background-color: lighten($primary-color, 40%);
+      color: $primary-color;
+    }
+
+    &.cell-o {
+      background-color: lighten($accent-color, 40%);
+      color: $accent-color;
+    }
+
+    &.cell-highlight {
+      box-shadow: 0 0 8px currentColor;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+#feedback {
+  font-size: 1.2rem;
+  color: $primary-color;
+  margin: 16px 0;
+  font-weight: 500;
+}

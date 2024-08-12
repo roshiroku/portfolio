@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4faff;
+  color: #22007c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.container {
+  max-width: 640px;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.header h1 {
+  font-size: 2rem;
+}
+.header h2 {
+  font-size: 1.5rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #f4faff;
+  background-color: #22007c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #cc0044;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  color: #22007c;
+  font-size: 2rem;
+  text-decoration: none;
+}
+#back-button:hover {
+  color: #cc0044;
+}
+
+body {
+  flex-direction: column;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+#game.game-over button {
+  pointer-events: none;
+}
+
+#game-board {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+}
+#game-board button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.75rem;
+  border-radius: 8px;
+  border: 2px solid currentColor;
+  background-color: #f4faff;
+  color: #22007c;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition-property: background-color, color, border, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+.x-turn #game-board button:hover:empty {
+  background-color: #7b49ff;
+  color: #22007c;
+}
+.o-turn #game-board button:hover:empty {
+  background-color: #ff99bb;
+  color: #cc0044;
+}
+#game-board button.cell-x {
+  background-color: #7b49ff;
+  color: #22007c;
+}
+#game-board button.cell-o {
+  background-color: #ff99bb;
+  color: #cc0044;
+}
+#game-board button.cell-highlight {
+  box-shadow: 0 0 8px currentColor;
+}
+#game-board button:disabled {
+  cursor: not-allowed;
+}
+
+#feedback {
+  font-size: 1.2rem;
+  color: #22007c;
+  margin: 16px 0;
+  font-weight: 500;
+}/*# sourceMappingURL=game.css.map */
