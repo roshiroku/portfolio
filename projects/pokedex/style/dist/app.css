@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  h3 {
+    font-size: 1.333rem;
+  }
+}
+
+small {
+  font-size: 0.85rem;
+}
+@media (max-width: 640px) {
+  small {
+    font-size: 0.75rem;
+  }
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+}
+@media (max-width: 640px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+a,
+button,
+input {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.input {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  padding: 4px 8px;
+  max-width: 100%;
+}
+
+.pill {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  line-height: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #dc0a2d;
+  color: white;
+  padding: 8px 12px;
+}
+header button {
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+header small {
+  margin-left: auto;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+aside {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 300px;
+  max-width: 100%;
+  overflow: auto;
+  padding: 20px 16px;
+  transform: translateX(-100%);
+  transition: transform 0.2s, opacity 0.2s;
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+aside.open {
+  transform: translateX(0);
+}
+aside.open + main {
+  margin-left: 300px;
+}
+@media (max-width: 640px) {
+  aside.open + main {
+    overflow: hidden;
+    margin-left: 0;
+  }
+  aside.open + main:before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.search-container {
+  position: relative;
+}
+.search-container input {
+  padding-right: 36px;
+}
+.search-container i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 36px;
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#pokedex-count {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#pokedex-list {
+  list-style: none;
+}
+#pokedex-list li {
+  padding: 8px 0;
+  width: 100%;
+}
+#pokedex-list li:not([hidden]) ~ li {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+#pokedex-list button {
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  text-align: left;
+}
+#pokedex-list button:hover {
+  text-decoration: underline;
+}
+
+main {
+  overflow: auto;
+  transition: margin-left 0.2s;
+  margin-left: 0;
+  height: 100%;
+}
+@media (max-width: 640px) {
+  main:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+}
+
+#pokedex-main {
+  display: flex;
+  gap: 32px;
+  padding: 16px 24px;
+  white-space: nowrap;
+}
+#pokedex-main .row,
+#pokedex-main .col {
+  display: flex;
+  gap: 12px;
+}
+#pokedex-main .col {
+  flex-direction: column;
+}
+#pokedex-main .compact {
+  gap: 4px;
+}
+#pokedex-main img {
+  display: block;
+  width: 512px;
+  max-width: 100%;
+  image-rendering: pixelated;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 1024px) {
+  #pokedex-main {
+    flex-direction: column;
+    gap: 12px;
+    white-space: initial;
+  }
+  #pokedex-main img {
+    width: 480px;
+  }
+}
+
+#pokedex-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  font-size: 6rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.2s visibility, 0.2s opacity;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+#pokedex-loading.active {
+  visibility: visible;
+  opacity: 1;
+}/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./style/dist/app.css">
+</head>
+
+<body>
+  <header>
+    <button id="menu-button">
+      <i class="fas fa-bars"></i>
+    </button>
+    <h1>Pokedex</h1>
+    <small>
+      data via
+      <a href="https://pokeapi.co" target="_blank">PokeAPI</a>
+    </small>
+  </header>
+  <div class="container">
+    <aside class="open">
+      <div class="search-container">
+        <input type="text" id="pokedex-filter" class="input" placeholder="Search Pokemon">
+        <i class="fas fa-magnifying-glass"></i>
+      </div>
+      <div id="pokedex-count"></div>
+      <ul id="pokedex-list"></ul>
+    </aside>
+    <main>
+      <div id="pokedex-main"></div>
+    </main>
+    <div id="pokedex-loading">
+      <i class="fas fa-circle-notch fa-spin"></i>
+    </div>
+  </div>
+  <script type="module" src="./script/dist/app.js"></script>
+</body>
+
+</html>
