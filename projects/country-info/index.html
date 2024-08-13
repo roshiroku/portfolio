@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Info</title>
+  <link rel="stylesheet" href="./style/app.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Country Info Lookup</h1>
+      <small>
+        data via
+        <a href="https://restcountries.com" target="_blank">REST Countries</a>
+      </small>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="search-panel">
+      <input type="text" id="search-input" placeholder="Search by name or code">
+    </div>
+    <div id="results-panel"></div>
+  </main>
+
+  <aside id="country-panel">
+    <button id="country-panel-close">✕</button>
+    <div id="country-info"></div>
+  </aside>
+
+  <script src="./script/app.js" type="module"></script>
+</body>
+
+</html>
