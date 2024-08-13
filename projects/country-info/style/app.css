@@ -91,6 +91,10 @@ th button {
   padding: 0;
 }
 
+th button:hover {
+  opacity: 0.75;
+}
+
 th i {
   margin-left: 5px;
   margin-top: -2px;
