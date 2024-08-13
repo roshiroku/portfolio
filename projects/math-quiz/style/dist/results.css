@@ -4,14 +4,24 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
 body {
-  min-height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #d3e4fb;
+  font-size: 1.125rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
   padding: 12px;
 }
 
@@ -37,6 +47,12 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .panel {
@@ -120,15 +136,6 @@ label:has(input[type=checkbox]) {
 }
 #back-button:hover {
   color: #1567d3;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 1.125rem;
 }
 
 .panel {

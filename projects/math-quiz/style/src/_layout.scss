@@ -1,11 +1,21 @@
-html {
+html,
+body {
   height: 100%;
 }
 
 body {
-  min-height: 100%;
   font-family: $font-family;
   background-color: lighten($color-primary, 40);
+  font-size: 1.125rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
   padding: 12px;
 }
 
@@ -32,6 +42,12 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .panel {

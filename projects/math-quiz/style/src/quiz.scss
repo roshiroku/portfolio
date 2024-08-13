@@ -1,20 +1,6 @@
 @import "setup";
 @import "layout";
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 1.125rem;
-
-  input,
-  button {
-    font-size: inherit;
-  }
-}
-
 .container {
   display: flex;
   justify-content: center;
