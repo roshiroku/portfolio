@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <link rel="stylesheet" href="./style/dist/index.css">
+</head>
+
+<body>
+  <h1>Math Quiz</h1>
+  <div class="panel">
+    <form id="quiz-settings">
+      <h3>Quiz Settings</h3>
+      <div class="form-group">
+        <label for="min-value">Minimum Term Value</label>
+        <input type="number" id="min-value" class="input" required>
+      </div>
+      <div class="form-group">
+        <label for="max-value">Maximum Term Value</label>
+        <input type="number" id="max-value" class="input" required>
+      </div>
+      <div class="form-group">
+        <label for="num-terms">Number of Terms</label>
+        <input type="number" id="num-terms" class="input" min="2" required>
+      </div>
+      <div class="checkbox-group">
+        <label>Possible Operations:</label>
+        <label><input type="checkbox" name="operations" value="+"> Addition (+)</label>
+        <label><input type="checkbox" name="operations" value="-"> Subtraction (-)</label>
+        <label><input type="checkbox" name="operations" value="*"> Multiplication (*)</label>
+        <label><input type="checkbox" name="operations" value="/"> Division (/)</label>
+      </div>
+      <div class="button-group">
+        <button type="button" id="start-quiz" class="button primary">Start Quiz</button>
+        <a href="results.html">Previous Results</a>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="./script/dist/pages/index.js"></script>
+</body>
+
+</html>

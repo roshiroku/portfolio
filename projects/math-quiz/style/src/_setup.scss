@@ -1,0 +1,19 @@
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$color-primary: #1A73E8;
+$color-secondary: #34A853;
+$color-accent: #FBBC05;
+$color-success: #00C851;
+$color-warning: #FF8800;
+$color-error: #FF4444;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin mobile {
+  @media (max-width: 512px) {
+    @content;
+  }
+}

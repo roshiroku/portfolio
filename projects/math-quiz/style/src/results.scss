@@ -1,0 +1,40 @@
+@import "setup";
+@import "layout";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.125rem;
+}
+
+.panel {
+  width: 512px;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+
+  th,
+  td {
+    padding: 4px 8px;
+
+
+    @include mobile {
+
+      &:nth-child(3),
+      &:nth-child(5) {
+        display: none;
+      }
+    }
+  }
+
+  tbody {
+    max-height: 320px;
+    overflow: auto;
+  }
+}

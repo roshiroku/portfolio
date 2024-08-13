@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./style/dist/quiz.css">
+</head>
+
+<body>
+  <a href="./index.html" id="back-button">
+    <i class="fas fa-chevron-left"></i>
+  </a>
+  <h1>Math Quiz</h1>
+  <div class="container">
+    <div id="sidenav" class="panel">
+      <h3>Questions</h3>
+      <div id="question-buttons" class="panel-body"></div>
+      <button id="finish-quiz" class="button primary">Finish Quiz</button>
+    </div>
+    <div id="main-area" class="panel">
+      <div id="results"></div>
+      <h2 id="question-number"></h2>
+      <div class="panel-body">
+        <div id="question"></div>
+        <input type="number" id="answer" class="input" placeholder="Enter your answer">
+        <div id="feedback" class="results"></div>
+      </div>
+      <div class="button-group">
+        <button id="prev-question" class="button primary" disabled>Previous</button>
+        <button id="next-question" class="button primary">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./script/dist/pages/quiz.js"></script>
+</body>
+
+</html>

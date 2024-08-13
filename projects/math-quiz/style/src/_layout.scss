@@ -1,0 +1,126 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: $font-family;
+  background-color: lighten($color-primary, 40);
+  padding: 12px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.panel {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+
+  &-body {
+    flex-grow: 1;
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  background-color: #ddd;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ccc;
+  }
+
+  &.primary {
+    background-color: $color-primary;
+    color: white;
+
+    &:hover {
+      background-color: darken($color-primary, 5);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .input {
+    width: 100%;
+  }
+}
+
+.input {
+  padding: 7px 8px;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+label[for],
+label:has(input[type=checkbox]) {
+  cursor: pointer;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#back-button {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-primary, 5);
+  }
+}

@@ -1,0 +1,31 @@
+@import "setup";
+@import "layout";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.125rem;
+}
+
+.panel {
+  width: 360px;
+  max-width: 100%;
+}
+
+#quiz-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .button-group {
+    margin-top: 8px;
+  }
+
+  input,
+  button {
+    font-size: inherit;
+  }
+}

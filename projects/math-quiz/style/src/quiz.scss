@@ -1,0 +1,99 @@
+@import "setup";
+@import "layout";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.125rem;
+
+  input,
+  button {
+    font-size: inherit;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#side-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#question-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: flex-start;
+  gap: 8px;
+
+  button {
+    @extend .button;
+
+    &.answered {
+      @extend .primary;
+    }
+
+    &.correct {
+      background-color: $color-success;
+
+      &:hover {
+        background-color: darken($color-success, 5);
+      }
+    }
+
+    &.incorrect {
+      background-color: $color-error;
+
+      &:hover {
+        background-color: darken($color-error, 5);
+      }
+    }
+  }
+}
+
+#main-area {
+  .panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .button-group {
+    justify-content: space-between;
+  }
+
+  .results {
+    font-weight: 500;
+
+    &.correct {
+      color: $color-success;
+    }
+
+    &.incorrect {
+      color: $color-error;
+    }
+  }
+}
+
+#results {
+  &:empty {
+    display: none;
+  }
+}
