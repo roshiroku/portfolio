@@ -1,7 +1,13 @@
-@mixin mobile {
+@mixin tablet {
 
   @media (max-width: 600px),
   (max-height: 900px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
     @content;
   }
 }
@@ -32,15 +38,18 @@ $display-width: var(--display-width);
   --gamepad-btn-width: 22.5%;
   --display-width: 442px;
 
-  @include mobile {
+  @include tablet {
     --text-lg: 1.25rem;
     --text-md: 1rem;
     --text-sm: 0.75rem;
     --spacing-lg: 32px;
     --spacing-md: 16px;
     --spacing-sm: 8px;
-    --sidebar-width: 100%;
     --display-width: 284px;
+  }
+
+  @include mobile {
+    --sidebar-width: 100%;
   }
 }
 

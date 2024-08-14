@@ -19,8 +19,12 @@
     --spacing-lg: 32px;
     --spacing-md: 16px;
     --spacing-sm: 8px;
-    --sidebar-width: 100%;
     --display-width: 284px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --sidebar-width: 100%;
   }
 }
 
@@ -195,7 +199,7 @@ main {
 main.shifted {
   margin-left: var(--sidebar-width);
 }
-@media (max-width: 600px), (max-height: 900px) {
+@media (max-width: 480px) {
   main.shifted {
     margin-left: 0;
   }

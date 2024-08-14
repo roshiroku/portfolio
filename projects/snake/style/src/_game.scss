@@ -54,7 +54,7 @@
         border-radius: 50%;
         font-size: $text-md;
 
-        @include mobile {
+        @include tablet {
           width: 25%;
         }
       }
@@ -114,7 +114,7 @@
       background-color: #000;
     }
 
-    @include mobile {
+    @include tablet {
       width: 50%;
     }
   }
