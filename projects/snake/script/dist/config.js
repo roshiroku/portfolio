@@ -4,5 +4,5 @@ const defaultSettings = {
     appleCount: 1,
     enableMice: false
 };
-const settings = JSON.parse(localStorage.getItem('snakeSettings') || JSON.stringify(defaultSettings));
+const settings = JSON.parse(localStorage.getItem('snake-settings') || JSON.stringify(defaultSettings));
 export { defaultSettings, settings };

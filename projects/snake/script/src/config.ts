@@ -5,7 +5,7 @@ const defaultSettings = {
   enableMice: false
 };
 
-const settings: typeof defaultSettings = JSON.parse(localStorage.getItem('snakeSettings') || JSON.stringify(defaultSettings));
+const settings: typeof defaultSettings = JSON.parse(localStorage.getItem('snake-settings') || JSON.stringify(defaultSettings));
 
 type SettingsKey = keyof typeof settings;
 type SettingsValue<K extends SettingsKey> = typeof settings[K];

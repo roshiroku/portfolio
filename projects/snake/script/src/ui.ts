@@ -38,13 +38,13 @@ function saveSettings() {
     appleCount: Number(appleCount.value),
     enableMice: enableMice.checked,
   };
-  localStorage.setItem("snakeSettings", JSON.stringify(newSettings));
+  localStorage.setItem("snake-settings", JSON.stringify(newSettings));
   closeSettings();
   setupGame();
 }
 
 function resetToDefault() {
-  localStorage.removeItem("snakeSettings");
+  localStorage.removeItem("snake-settings");
   Object.assign(settings, defaultSettings);
   updateUI(defaultSettings);
   closeSettings();
