@@ -1,6 +1,6 @@
 # Web Development Portfolio
 
-This is a portfolio website created as an assignment for HackerU Academy. The site showcases various web development projects, highlighting skills in creating modern, responsive landing pages.
+This is a portfolio website created as an assignment for HackerU Academy. The site showcases various web development projects, highlighting skills in creating modern, responsive landing pages and interactive web applications.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ This is a portfolio website created as an assignment for HackerU Academy. The si
 The portfolio website features:
 - A hero section with a slogan and a short paragraph
 - An "About Me" section with a brief introduction
-- A project gallery showcasing various landing page projects
+- A project gallery showcasing various landing page projects and interactive web apps
 - A contact section with a form
 - Responsive design down to approximately 280px width
 
@@ -37,8 +37,11 @@ The portfolio website features:
 - CSS
 - SASS
 - Bootstrap (used in specific projects)
+- TypeScript (used in interactive web apps)
 - Fontawesome - for icons
 - Google Fonts - for fonts
+- REST Countries API (used in Country Info Lookup)
+- PokeAPI (used in Pokedex)
 
 ## Projects
 
@@ -70,6 +73,30 @@ The portfolio website features:
    - **Description:** Modern landing page with a hero section, services section, lead-generating contact form, business location map, and social links.
    - **Technologies:** HTML5, CSS, Bootstrap.
 
+8. **Country Info Lookup**
+   - **Description:** Responsive table view listing country information retrieved from REST Countries API, with locally cached favorite countries. Supports filtering, sorting, and detailed views.
+   - **Technologies:** HTML5, CSS, JavaScript, REST Countries API.
+
+9. **Math Quiz**
+   - **Description:** Customizable math quizzes with difficulty settings, progress tracking, and local storage. Fully responsive and supports mobile displays.
+   - **Technologies:** HTML5, CSS, SASS, JavaScript, TypeScript.
+
+10. **Pokedex**
+    - **Description:** Responsive Pokedex listing Pokémon information retrieved from PokeAPI, with filtering and locally cached data.
+    - **Technologies:** HTML5, CSS, SASS, JavaScript, TypeScript, PokeAPI.
+
+11. **Snake**
+    - **Description:** Customizable Snake game rendered on canvas with options like disabling walls, edible mice, and adjustable speed. Fully responsive and supports mobile displays.
+    - **Technologies:** HTML5, CSS, SASS, JavaScript, TypeScript.
+
+12. **Tic-Tac-Toe**
+    - **Description:** Responsive Tic-Tac-Toe game with player vs player and AI modes. Supports mobile displays.
+    - **Technologies:** HTML5, CSS, SASS, JavaScript, TypeScript.
+
+13. **Todo List**
+    - **Description:** Responsive Todo List with local storage, task filtering, and editing features. Supports mobile displays.
+    - **Technologies:** HTML5, CSS, SASS, JavaScript, TypeScript.
+
 ## Setup and Installation
 
 1. Clone the repository:
@@ -80,11 +107,14 @@ The portfolio website features:
    ```bash
    cd portfolio
    ```
-3. Open the `index.html` file in your browser to view the website.
+3. Install a live server extension (e.g., Live Server for VSCode) or use a local server to run the project, as some scripts are loaded as modules:
+   - [Live Server for VSCode](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+4. Install recommended VSCode extensions for better development experience:
+   - [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) - for highlighting HTML syntax in string template literals.
 
 ## Usage
 
-- Explore the "Projects" section to view different landing pages.
+- Explore the "Projects" section to view different landing pages and interactive web apps.
 - Note: Contact forms, CV download, and social links are not connected, as this website is a frontend demonstration.
 
 ## Deployment
