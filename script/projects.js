@@ -1,5 +1,5 @@
 const projectData = {
-  categories: ["styled", "scripted"],
+  categories: ["scripted", "styled"],
   all: [
     {
       id: "discover-the-world",
