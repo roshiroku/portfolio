@@ -86,8 +86,8 @@ const projectData = {
       id: "pokedex",
       title: "Pokedex",
       titleHTML: /* html */`Poke<span class="gradient-text">dex</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
+      overview: "A responsive Pokedex with filterable Pokémon data and locally cached information.",
+      desc: "This project features a responsive, mobile-supported Pokedex that lists Pokémon and their detailed information retrieved from the PokeAPI. Users can filter the Pokémon data, and the information is locally cached for quick access and a seamless browsing experience.",
       tech: ["sass", "css", "html", "js", "ts"],
       category: "scripted"
     },
