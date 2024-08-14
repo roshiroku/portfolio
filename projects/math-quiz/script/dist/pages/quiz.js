@@ -28,8 +28,8 @@ finishBtn.addEventListener("click", () => {
     quiz.timeCompleted = Date.now();
     alert(completeMessage());
     updateUI();
-    const previousResults = JSON.parse(localStorage.getItem("mathQuizResults") || "[]");
-    localStorage.setItem("mathQuizResults", JSON.stringify([...previousResults, quiz].slice(-50)));
+    const previousResults = JSON.parse(localStorage.getItem("math-quiz-results") || "[]");
+    localStorage.setItem("math-quiz-results", JSON.stringify([...previousResults, quiz].slice(-50)));
 });
 function initializeUI() {
     quiz.questions.forEach((_, i) => {

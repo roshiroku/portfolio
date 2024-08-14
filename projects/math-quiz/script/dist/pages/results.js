@@ -1,6 +1,6 @@
 import Quiz from "../Quiz.js";
 const tbody = document.getElementsByTagName("tbody")[0];
-const results = JSON.parse(localStorage.getItem("mathQuizResults") || "[]").map((result) => {
+const results = JSON.parse(localStorage.getItem("math-quiz-results") || "[]").map((result) => {
     const quiz = new Quiz(result.questions.length, result.settings, result);
     quiz.timeStarted = result.timeStarted;
     quiz.timeCompleted = result.timeCompleted;
