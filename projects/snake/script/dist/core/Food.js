@@ -39,10 +39,10 @@ export default class Food extends Element {
         this.pixels = this.hitbox = [];
     }
 }
-export class Pizza extends Food {
+export class Apple extends Food {
     constructor() {
         super(...arguments);
-        this.color = "gold";
+        this.color = "red";
         this.value = 1;
     }
     start() {

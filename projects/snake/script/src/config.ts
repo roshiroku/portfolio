@@ -1,7 +1,7 @@
 const defaultSettings = {
   enableWalls: true,
   initialSpeed: 0.2,
-  pizzaCount: 1,
+  appleCount: 1,
   enableMice: false
 };
 

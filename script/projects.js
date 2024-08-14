@@ -95,8 +95,8 @@ const projectData = {
       id: "snake",
       title: "Snake",
       titleHTML: /* html */`Snake <span class="gradient-text">Game</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
+      overview: "A customizable Snake game with options like disabling walls, edible mice, and adjustable speed.",
+      desc: "This project offers a responsive, mobile-supported Snake game rendered on canvas. The game includes various customizations, such as disabling walls, spawning edible mice that slow the snake down, and adjusting the snake's speed for a tailored gameplay experience.",
       tech: ["sass", "css", "html", "js", "ts"],
       category: "scripted"
     },

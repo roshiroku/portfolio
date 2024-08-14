@@ -45,8 +45,8 @@ export default class Food extends Element {
   }
 }
 
-export class Pizza extends Food {
-  color = "gold";
+export class Apple extends Food {
+  color = "red";
   value = 1;
 
   start() {

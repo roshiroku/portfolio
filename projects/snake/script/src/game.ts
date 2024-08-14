@@ -1,5 +1,5 @@
 import { settings } from './config.js';
-import { Mouse, Pizza } from './core/Food.js';
+import { Mouse, Apple } from './core/Food.js';
 import Game from "./core/Game.js";
 import Snake from "./core/Snake.js";
 import { HorizontalWall, VerticalWall } from './core/Wall.js';
@@ -34,8 +34,8 @@ export function setupGame() {
     );
   }
 
-  for (let i = 0; i < settings.pizzaCount; i++) {
-    game.addElement(new Pizza());
+  for (let i = 0; i < settings.appleCount; i++) {
+    game.addElement(new Apple());
   }
 
   if (settings.enableMice) {
