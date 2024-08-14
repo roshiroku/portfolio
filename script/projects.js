@@ -113,8 +113,8 @@ const projectData = {
       id: "todo-list",
       title: "Todo List",
       titleHTML: /* html */`Todo <span class="gradient-text">List</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
+      overview: "A responsive Todo List with local storage, task filtering, and editing features.",
+      desc: "This responsive, mobile-supported Todo List allows users to manage their tasks efficiently, with features to mark tasks as completed, edit, or remove them. The list is filterable by completion status, and all tasks are saved locally for easy access and organization.",
       tech: ["sass", "css", "html", "js", "ts"],
       category: "scripted"
     },
