@@ -68,9 +68,9 @@ const projectData = {
       id: "country-info",
       title: "Country Info Lookup",
       titleHTML: /* html */`Country Info <span class="gradient-text">Lookup</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
-      tech: ["sass", "css", "html", "js"],
+      overview: "A responsive table view of country information with filtering, sorting, and detailed views.",
+      desc: "This project features a responsive, mobile-friendly table view listing country information retrieved from the REST Countries API, with locally cached favorite countries. The table supports filtering, sorting, and clicking individual rows to view detailed country information.",
+      tech: ["css", "html", "js"],
       category: "scripted"
     },
     {
