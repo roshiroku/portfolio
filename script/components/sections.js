@@ -1,4 +1,5 @@
 import { projectData, techData } from "../projects.js";
+import { ucFirst } from "../utils.js";
 import { button } from "./layout.js";
 
 export function heroSection(title, content, buttons) {
@@ -25,6 +26,39 @@ export function techSection(technologies = techData.ids) {
 }
 
 export function projectsSection(projects = projectData.ids) {
+  const tabLinks = /* html */`
+    <div class="tab-links">
+      ${projectData.categories.reduce((html, category, i) => html + /* html */`
+        <label class="tab-link${i ? "" : " active"}" for="tab-${category}">${ucFirst(category)}</label>`, "")}
+    </div>`;
+  const tabs = /* html */`
+    <div class="tabs">
+      ${projectData.categories.reduce((html, category, i) => html + /* html */`
+        <div class="tab${i ? "" : " active"}" id="tab-${category}">
+          <ul>
+          ${projects.filter(proj => projectData[proj].category == category).reduce((html, proj) => html + /* html */`
+            <li>
+              <!-- ${projectData[proj].title} -->
+              <a href="${ROOT_URL}projects/${proj}/project.html" class="card card-clickable">
+                <div class="card-top">
+                  <div class="card-img">
+                    <img src="${ROOT_URL}images/projects/${proj}-thumb.png" alt="${projectData[proj].title}">
+                  </div>
+                </div>
+                <div class="card-bottom">
+                  <h4 class="card-title">${projectData[proj].title}</h4>
+                  <p class="card-desc">${projectData[proj].overview}</p>
+                  <ul class="card-footer">
+                    ${projectData[proj].tech.reduce((html, tech) => html + /* html */`
+                      <li>${techIcon(tech, false)}</li>`, "")}
+                  </ul>
+                </div>
+              </a>
+            </li>`, "")}
+          </ul>
+        </div>`, "")}
+    </div>`;
+
   return /* html */`
     <!-- Projects section -->
     <section id="projects" class="section">
@@ -32,27 +66,8 @@ export function projectsSection(projects = projectData.ids) {
       <p class="type-desc section-desc">
         Explore my diverse web development projects, showcasing innovative designs, robust functionality, and creative solutions using modern technologies.
       </p>
-      <ul>
-        ${projects.reduce((html, proj) => html + /* html */`
-          <li>
-            <!-- ${projectData[proj].title} -->
-            <a href="${ROOT_URL}projects/${proj}/project.html" class="card card-clickable">
-              <div class="card-top">
-                <div class="card-img">
-                  <img src="${ROOT_URL}images/projects/${proj}-thumb.png" alt="${projectData[proj].title}">
-                </div>
-              </div>
-              <div class="card-bottom">
-                <h4 class="card-title">${projectData[proj].title}</h4>
-                <p class="card-desc">${projectData[proj].overview}</p>
-                <ul class="card-footer">
-                  ${projectData[proj].tech.reduce((html, tech) => html + /* html */`
-                    <li>${techIcon(tech, false)}</li>`, "")}
-                </ul>
-              </div>
-            </a>
-          </li>`, "")}
-      </ul>
+      ${tabLinks}
+      ${tabs}
     </section>`;
 }
 
@@ -107,6 +122,11 @@ export function contactSection() {
 }
 
 function techIcon(tech, showTitle = true) {
-  return /* html */`
-    <i class="${techData[tech].icon}"${showTitle ? ` title="${techData[tech].title}"` : ""}></i></li>`;
+  tech = techData[tech];
+
+  if (tech.image) {
+    return /* html */`<img src="${ROOT_URL}images/${tech.image}" alt="${tech.title}"${showTitle ? ` title="${tech.title}"` : ""} class="tech-icon">`;
+  }
+
+  return /* html */`<i class="tech-icon ${tech.icon}"${showTitle ? ` title="${tech.title}"` : ""}></i>`;
 }

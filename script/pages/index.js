@@ -1,5 +1,6 @@
 import { header, footer, linkButton } from "../components/layout.js";
 import { heroSection, techSection, projectsSection, contactSection } from "../components/sections.js";
+import { initializeTabs } from "../components/tabs.js";
 
 document.body.innerHTML = /* html */`
   ${header()}
@@ -25,6 +26,8 @@ const navToggleCheckbox = document.getElementById("nav-toggle");
 const navLinks = document.querySelectorAll("#site-header nav a");
 
 navLinks.forEach(link => link.addEventListener("click", () => navToggleCheckbox.checked = false));
+
+initializeTabs();
 
 function aboutSection() {
   return /* html */`

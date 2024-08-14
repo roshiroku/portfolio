@@ -266,3 +266,13 @@ a {
   background-repeat: no-repeat;
   z-index: -1;
 }
+
+.tech-icon {
+  display: block;
+  
+  @at-root{
+    img#{&} {
+      height: 0.875em;
+    }
+  }
+}

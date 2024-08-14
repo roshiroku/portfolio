@@ -293,6 +293,7 @@ textarea.form-input {
   display: flex;
   font-size: 1.25rem;
   gap: 20px;
+  align-items: center;
 }
 
 .panel {
@@ -314,6 +315,41 @@ textarea.form-input {
   .panel-body {
     padding: 32px 24px;
   }
+}
+
+.tab-links {
+  display: flex;
+  gap: 12px;
+}
+.tab-links .tab-link {
+  position: relative;
+  padding: 12px;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.tab-links .tab-link.active {
+  pointer-events: none;
+}
+.tab-links .tab-link.active:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+.tab-links .tab-link:hover {
+  color: var(--color-link);
+}
+
+.tabs .tab {
+  display: none;
+}
+.tabs .tab.active {
+  display: block;
 }
 
 html {
@@ -546,6 +582,13 @@ a {
   z-index: -1;
 }
 
+.tech-icon {
+  display: block;
+}
+img.tech-icon {
+  height: 0.875em;
+}
+
 .section {
   position: relative;
   z-index: 1;
@@ -641,7 +684,13 @@ a {
 #projects {
   text-align: center;
 }
-#projects > ul {
+#projects .tab-links {
+  justify-content: center;
+  width: var(--section-title-width);
+  margin: 24px auto 0;
+  font-size: 1.25rem;
+}
+#projects .tab > ul {
   text-align: left;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
@@ -651,17 +700,17 @@ a {
   margin: 32px auto 0;
 }
 @media (max-width: 768px) {
-  #projects > ul {
+  #projects .tab > ul {
     display: flex;
     flex-direction: column;
   }
 }
 @media (max-width: 480px) {
-  #projects > ul {
+  #projects .tab > ul {
     gap: var(--container-px);
   }
 }
-#projects > ul > li .card {
+#projects .tab > ul > li .card {
   height: 100%;
 }
 

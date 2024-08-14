@@ -24,26 +24,35 @@
 #projects {
   text-align: center;
 
-  >ul {
-    text-align: left;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 24px;
+  .tab-links {
+    justify-content: center;
     width: $section-title-width;
-    margin: 32px auto 0;
+    margin: 24px auto 0;
+    font-size: 1.25rem;
+  }
 
-    @include small-tablet {
-      display: flex;
-      flex-direction: column;
-    }
+  .tab {
+    >ul {
+      text-align: left;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 24px;
+      width: $section-title-width;
+      margin: 32px auto 0;
 
-    @include small-mobile {
-      gap: $container-px;
-    }
+      @include small-tablet {
+        display: flex;
+        flex-direction: column;
+      }
 
-    >li .card {
-      height: 100%;
+      @include small-mobile {
+        gap: $container-px;
+      }
+
+      >li .card {
+        height: 100%;
+      }
     }
   }
 }
