@@ -104,8 +104,8 @@ const projectData = {
       id: "tic-tac-toe",
       title: "Tic-Tac-Toe",
       titleHTML: /* html */`Tic-Tac-<span class="gradient-text">Toe</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
+      overview: "A responsive Tic-Tac-Toe game with player vs player and AI modes.",
+      desc: "This responsive, mobile-supported Tic-Tac-Toe game offers multiple play modes, including player vs player, play as X vs AI, and play as O vs AI. The game delivers a classic experience with modern flexibility, allowing users to enjoy it across different devices.",
       tech: ["sass", "css", "html", "js", "ts"],
       category: "scripted"
     },
