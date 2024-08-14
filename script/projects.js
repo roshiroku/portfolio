@@ -77,8 +77,8 @@ const projectData = {
       id: "math-quiz",
       title: "Math Quiz",
       titleHTML: /* html */`Math <span class="gradient-text">Quiz</span>`,
-      overview: "A stunning CSS Grid landing page with tiled images and a lead-generating contact form.",
-      desc: "This project showcases a visually stunning landing page using CSS Grid to tile various images with content. It includes a contact form for lead generation and is built with HTML5, CSS, and SASS, demonstrating modern web development skills and design expertise.",
+      overview: "A customizable math quiz with progress tracking, fully responsive for mobile displays.",
+      desc: "This project offers a customizable math quiz experience, allowing users to adjust terms, ranges, and operations. Progress can be tracked by viewing previous quizzes and results saved locally. It's fully responsive, supporting mobile displays for a seamless experience.",
       tech: ["sass", "css", "html", "js", "ts"],
       category: "scripted"
     },
