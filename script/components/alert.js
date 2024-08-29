@@ -14,7 +14,7 @@ export function alert(text, btn = "OK", attrs = {}) {
       <div class="alert-header">
         ${window.location.href} says
       </div>
-      <div class="alert-body">${text}</div>
+      <div class="alert-body type-desc">${text}</div>
       <div class="alert-buttons">
         ${button(btn, { "data-action": "close" })}
       </div>
