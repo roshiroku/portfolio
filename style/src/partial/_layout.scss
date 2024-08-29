@@ -310,16 +310,19 @@ a {
   box-shadow: 0 0 4px $color-divider;
   transform: translateY(-20px);
   opacity: 0;
-  transition: transform 0.2s, opacity 0.2s;
+  visibility: hidden;
+  transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
 
   &.active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
 
   &-header {
     padding: 8px 16px;
     border-bottom: 1px solid $color-divider;
+    font-size: .875rem;
   }
 
   &-body {
