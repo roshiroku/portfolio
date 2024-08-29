@@ -367,6 +367,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
 }
+body.lightbox-active {
+  overflow: hidden;
+}
 
 a {
   color: var(--color-text);
@@ -554,6 +557,20 @@ a {
   background-position: center top;
 }
 
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+#lightbox.active {
+  visibility: visible;
+  opacity: 0.5;
+}
+
 .content-wrapper {
   width: 100%;
   max-width: 1408px;
@@ -587,6 +604,40 @@ a {
 }
 img.tech-icon {
   height: 0.875em;
+}
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--header-height);
+  left: var(--container-px);
+  right: var(--container-px);
+  z-index: 2;
+  margin: var(--container-px) auto 0;
+  max-width: 100%;
+  width: 480px;
+  background-color: var(--color-bg);
+  box-shadow: 0 0 4px var(--color-divider);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.alert.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.alert-header {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-divider);
+}
+.alert-body {
+  padding: 16px;
+}
+.alert-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
 }
 
 .section {

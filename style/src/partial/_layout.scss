@@ -12,6 +12,10 @@ body {
   line-height: 1.25;
   color: $color-text;
   background-color: $color-bg;
+
+  &.lightbox-active {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -236,6 +240,21 @@ a {
   }
 }
 
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: $color-bg;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: opacity 0.2s, visibility 0.2s;
+
+  &.active {
+    visibility: visible;
+    opacity: 0.5;
+  }
+}
+
 .content-wrapper {
   width: 100%;
   max-width: 1408px;
@@ -269,10 +288,49 @@ a {
 
 .tech-icon {
   display: block;
-  
-  @at-root{
+
+  @at-root {
     img#{&} {
       height: 0.875em;
     }
+  }
+}
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: $header-height;
+  left: $container-px;
+  right: $container-px;
+  z-index: 2;
+  margin: $container-px auto 0;
+  max-width: 100%;
+  width: 480px;
+  background-color: $color-bg;
+  // border-radius: 8px;
+  box-shadow: 0 0 4px $color-divider;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-header {
+    padding: 8px 16px;
+    border-bottom: 1px solid $color-divider;
+  }
+
+  &-body {
+    padding: 16px;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
   }
 }

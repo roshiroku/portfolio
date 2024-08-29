@@ -1,4 +1,5 @@
 import { projectData } from "../projects.js";
+import { attrString } from "../utils.js";
 
 export function header() {
   return /* html */`
@@ -116,8 +117,4 @@ export function linkButton(content, href, attrs = {}) {
         ${content}
       </div>
     </a>`;
-}
-
-function attrString(attrs) {
-  return Object.keys(attrs).reduce((str, attr) => str + ` ${attr}${attrs[attr] ? `="${attrs[attr]}"` : ""}`, "");
 }

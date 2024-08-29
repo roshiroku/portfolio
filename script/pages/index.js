@@ -1,3 +1,4 @@
+import { alert, initializeAlerts, lightbox } from "../components/alert.js";
 import { header, footer, linkButton } from "../components/layout.js";
 import { heroSection, techSection, projectsSection, contactSection } from "../components/sections.js";
 import { initializeTabs } from "../components/tabs.js";
@@ -20,7 +21,8 @@ document.body.innerHTML = /* html */`
       <div class="blur-effect" aria-hidden="true"></div>
     </div>
   </main>
-  ${footer(["discover-the-world", "free-consulting", "here-now", "outside-the-box"])}`;
+  ${footer(["discover-the-world", "free-consulting", "here-now", "outside-the-box"])}
+  ${lightbox()}`;
 
 const navToggleCheckbox = document.getElementById("nav-toggle");
 const navLinks = document.querySelectorAll("#site-header nav a");
@@ -28,6 +30,7 @@ const navLinks = document.querySelectorAll("#site-header nav a");
 navLinks.forEach(link => link.addEventListener("click", () => navToggleCheckbox.checked = false));
 
 initializeTabs();
+initializeAlerts();
 
 function aboutSection() {
   return /* html */`
@@ -41,6 +44,7 @@ function aboutSection() {
       <p class="type-desc section-desc">
         Motivation, consistency, creativity, and professionalism drive my work. I strive to ensure each project is functional, aesthetically pleasing, and user-centric. I'm excited to bring innovative solutions to the digital world and collaborate on future projects.
       </p>
-      ${linkButton("Download CV", "#")}
+      ${linkButton("Download CV", "#", { class: "alert-link", "data-for": "cv-alert" })}
+      ${alert("CV download will become available soon. Thank you for your interest!", "OK", { id: "cv-alert" })}
     </section>`;
 }
