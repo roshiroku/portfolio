@@ -12,7 +12,7 @@ export function alert(text, btn = "OK", attrs = {}) {
   return /* html */`
     <div class="${cssClass}"${attrString(attrs)}>
       <div class="alert-header">
-        ${window.location.href} says
+        ${window.location.host} says
       </div>
       <div class="alert-body type-desc">${text}</div>
       <div class="alert-buttons">
