@@ -615,8 +615,7 @@ img.tech-icon {
   right: var(--container-px);
   z-index: 2;
   margin: var(--container-px) auto 0;
-  max-width: 100%;
-  width: 480px;
+  max-width: 480px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-divider);
   transform: translateY(-20px);
